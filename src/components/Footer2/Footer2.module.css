@@ -1,0 +1,9 @@
+.container {
+  margin-top: 220px;
+}
+.explore {
+  cursor: pointer;
+}
+.explore:hover {
+  color: #fe956f;
+}
