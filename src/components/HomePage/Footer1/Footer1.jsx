@@ -28,7 +28,7 @@ const Footer1 = () => {
           slidesPerView={3}
           slidesPerGroup={1}
           spaceBetween={20}
-          className={css.tCarousel}
+          className={` py-12 {css.tCarousel}`}
         >
           {TestimonialsData.map((testimonial, index) => (
             <SwiperSlide key={index}>

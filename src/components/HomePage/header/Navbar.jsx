@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../../assets/TĐT_logo.png";
 import "./../../../App.css";
+import { Link } from "react-router-dom";
 
 const StyledContainer = styled.div`
   padding: 1.5rem;
@@ -37,7 +38,7 @@ const StyledMenuComponent = styled.div`
 const StyledMenuUl = styled.ul`
   ${StyledMenu}
 `;
-const StyledListMenu = styled.li`
+const StyledListMenu = styled(Link)`
   &:hover {
     color: #fe956f;
     cursor: pointer;
@@ -54,13 +55,15 @@ const Navbar = () => {
   return (
     <StyledContainer className="container">
       <StyledLogo className="logo">
-        <StyledLogoImg src={logo} alt={logo} />
+        <Link to="/">
+          <StyledLogoImg src={logo} alt={logo} />
+        </Link>
       </StyledLogo>
 
       <StyledRight className="right pr-4">
         <StyledMenuComponent className="menu">
           <StyledMenuUl className="menu">
-            <StyledListMenu>Home</StyledListMenu>
+            <StyledListMenu to="/">Home</StyledListMenu>
             <StyledListMenu>About us</StyledListMenu>
             <StyledListMenu>Collection</StyledListMenu>
             <StyledListMenu>Info</StyledListMenu>
@@ -73,9 +76,11 @@ const Navbar = () => {
           <FontAwesomeIcon className="w-4 h-6 " icon={faUser} />
           Login
         </button>
-        <button className="px-8 py-3 rounded-md bg-[#20B486]">
-          Signup for free
-        </button>
+        <Link to="/register">
+          <button className="px-8 py-3 rounded-md bg-[#20B486]">
+            Signup for free
+          </button>
+        </Link>
       </StyledMenuComponent>
 
       <div className="md:hidden" onClick={handleClick}>
