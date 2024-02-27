@@ -47,7 +47,6 @@ export const SignInContainer = styled.div`
 export const Form = styled.form`
   background-color: #ffffff;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 0 50px;
@@ -55,6 +54,9 @@ export const Form = styled.form`
   text-align: center;
 `;
 
+export const SignUpTitle = styled.div`
+  display: flex;
+`;
 export const Title = styled.h1`
   font-weight: bold;
   margin: 0;
@@ -78,7 +80,30 @@ export const Input = styled.input`
     outline: none;
   }
 `;
+export const ValidationIcon = styled.span`
+  display: inline-block;
+  margin-left: 0.25rem;
+  color: ${(props) => (props.valid ? "green" : "red")};
+  display: ${(props) =>
+    props.valid === null || !props.valid ? "none" : "inline-block"};
+`;
 
+export const Instructions = styled.p`
+  font-size: 0.75rem;
+  color: red;
+  margin: 0; /* Reset default margin */
+  display: ${(props) => (props.isVisible ? "flex" : "none")};
+
+  > svg {
+    margin-right: 0.25rem;
+  }
+`;
+
+export const Offscreen = styled.p`
+  position: absolute;
+  left: -9999px;
+  /* Add any other styles as needed */
+`;
 export const Button = styled.button`
   border-radius: 20px;
   border: 1px solid #ff4b2b;
@@ -90,13 +115,23 @@ export const Button = styled.button`
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
+
+  ${(props) =>
+    props.disabled &&
+    `
+    opacity: 0.5; 
+    cursor: not-allowed;
+  `}
+
   &:active {
     transform: scale(0.95);
   }
+
   &:focus {
     outline: none;
   }
 `;
+
 export const GhostButton = styled(Button)`
   background-color: transparent;
   border-color: #ffffff;

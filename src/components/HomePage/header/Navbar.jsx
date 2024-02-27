@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faBars, faClose } from "@fortawesome/free-solid-svg-icons";
-import logo from "../../../assets/TĐT_logo.png";
+import logoTDT from "../../../assets/logo-TDT.png";
 import "./../../../App.css";
 import { Link } from "react-router-dom";
 
@@ -56,17 +56,17 @@ const Navbar = () => {
     <StyledContainer className="container">
       <StyledLogo className="logo">
         <Link to="/">
-          <StyledLogoImg src={logo} alt={logo} />
+          <StyledLogoImg src={logoTDT} alt={logoTDT} />
         </Link>
       </StyledLogo>
 
       <StyledRight className="right pr-4">
         <StyledMenuComponent className="menu">
           <StyledMenuUl className="menu">
-            <StyledListMenu to="/">Home</StyledListMenu>
-            <StyledListMenu>About us</StyledListMenu>
-            <StyledListMenu>Collection</StyledListMenu>
-            <StyledListMenu>Info</StyledListMenu>
+            <StyledListMenu to="/">Trang chủ</StyledListMenu>
+            <StyledListMenu>Tính điểm </StyledListMenu>
+            <StyledListMenu>Điểm chuẩn</StyledListMenu>
+            <StyledListMenu to="/QuizzPersonality">Công cụ</StyledListMenu>
           </StyledMenuUl>
         </StyledMenuComponent>
       </StyledRight>

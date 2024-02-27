@@ -1,0 +1,122 @@
+.mbti-bg-header {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+    linear-gradient(180deg, #01543a, #2a9d60 45.18%, #78af4c 85.49%);
+  background-blend-mode: multiply, normal;
+}
+.mbti-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 64px;
+  position: relative;
+  width: 100%;
+}
+.mbti-header__top-content {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+}
+.mbti-header__top-content--title-group {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+.mbti-header__top-content--button {
+  align-items: center;
+  background: #00b14f;
+  border-radius: 44px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  gap: 12px;
+  justify-content: center;
+  line-height: 24px;
+  padding: 14px 20px 14px 30px;
+}
+.mbti-header__top-content--button:hover {
+  background: #058a41;
+}
+.mbti-header__personalities {
+  height: 320px;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    hsla(0, 0%, 100%, 0),
+    #000 20%,
+    #000 80%,
+    hsla(0, 0%, 100%, 0)
+  );
+  mask-image: linear-gradient(
+    90deg,
+    hsla(0, 0%, 100%, 0),
+    #000 20%,
+    #000 80%,
+    hsla(0, 0%, 100%, 0)
+  );
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 55px 0;
+  position: relative;
+  width: 100vw;
+}
+
+/* .mbti-header__personality {
+  background: white;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  position: relative;
+  width: 401px;
+} */
+
+.mbti-header__personality--image {
+  height: 210px;
+  width: 250px;
+}
+.mbt-header__img--intro {
+  max-width: unset !important;
+}
+.mbti-header__personality--image img {
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  height: 210px;
+  object-fit: cover;
+  width: 170px;
+}
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.mbti-header__personality--content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 6.095px;
+  padding-right: 32px;
+}
+.mbti-header__personality--content-title {
+  color: #02553d;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.16px;
+  line-height: 24px;
+  text-align: left;
+}
+.mbti-header__personality--content-short-description {
+  align-self: stretch;
+  color: #02553d;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.14px;
+  line-height: 22px;
+}

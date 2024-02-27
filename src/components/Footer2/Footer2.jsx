@@ -1,5 +1,5 @@
 import css from "./Footer2.module.css";
-import logo from "..//..//assets/TĐT_logo.png";
+import logoTDT from "..//..//assets/logo-TDT.png";
 import { FaFacebookF } from "react-icons/fa";
 import { FaDribbble } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -9,7 +9,7 @@ const Footer2 = () => {
     <div className={`w-full bg-white ${css.container}`}>
       <div className="md:max-w-[1480px] m-auto grid md:grid-cols-5 max-[780px]:grid-cols-2  gap-8 max-w-[600px] pt-6 px-4 md:px-0">
         <div className="col-span-2">
-          <img src={logo} className="h-[25px]" />
+          <img src={logoTDT} className="h-[25px]" />
           <h3 className="text-2xl font-bold mt-10">Contact Us</h3>
           <h3 className="py-2 text-[#6D737A]">Call : +123 400 123</h3>
           <h3 className="py-2 text-[#6D737A]">
