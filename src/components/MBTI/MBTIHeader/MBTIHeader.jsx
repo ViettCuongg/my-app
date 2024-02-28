@@ -14,7 +14,7 @@ const marqueeAnimation = keyframes`
 `;
 const MarqueeContainer = styled.div`
   align-items: flex-start;
-  animation: ${marqueeAnimation} 90s linear infinite;
+  animation: ${marqueeAnimation} 84s linear infinite;
   display: flex;
   gap: 24px;
   position: absolute;
@@ -53,11 +53,6 @@ const MBTIHeader = () => {
 
     marqueeRef.current.addEventListener("mouseenter", handleMouseEnter);
     marqueeRef.current.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      marqueeRef.current.removeEventListener("mouseenter", handleMouseEnter);
-      marqueeRef.current.removeEventListener("mouseleave", handleMouseLeave);
-    };
   }, []);
 
   return (

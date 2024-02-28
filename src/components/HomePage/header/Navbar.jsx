@@ -55,7 +55,7 @@ const Navbar = () => {
   return (
     <StyledContainer className="container">
       <StyledLogo className="logo">
-        <Link to="/">
+        <Link to="/Homepage">
           <StyledLogoImg src={logoTDT} alt={logoTDT} />
         </Link>
       </StyledLogo>

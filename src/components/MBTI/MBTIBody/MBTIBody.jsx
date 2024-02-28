@@ -54,7 +54,6 @@ const MBTIBody = () => {
                 một cặp lưỡng phân của 8 yếu tố chức năng, nhận thức sau:
               </p>
             </div>
-            <div className="mbti-personality-classification__list-item"></div>
           </div>
         </div>
       </div>

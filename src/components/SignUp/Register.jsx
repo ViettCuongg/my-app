@@ -107,7 +107,7 @@ const Register = () => {
                 </Components.SignUpTitle>
                 <Components.Input
                   type="text"
-                  id="username"
+                  id="fullname"
                   ref={userRef}
                   autoComplete="off"
                   onChange={(e) => setUser(e.target.value)}
