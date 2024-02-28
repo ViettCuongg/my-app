@@ -59,7 +59,6 @@ const Register = () => {
   }, [user, email, pwd]);
   const handleSignUp = async (e) => {
     e.preventDefault();
-    //if button enabled with js hack
     const v1 = EMAIL_REGEX.test(email);
     const v2 = PWD_REGEX.test(pwd);
     if (!v1 || !v2) {
@@ -68,7 +67,7 @@ const Register = () => {
     }
     console.log(email, pwd);
     try {
-      const response = await axios.post();
+      setSuccess(true);
     } catch (error) {}
   };
   return (
@@ -79,7 +78,9 @@ const Register = () => {
           <section className="text-center">
             <h1 className="text-4xl font-bold mb-4 py-10">Sign Up Success</h1>
             <button className="bg-blue-500 text-white px-4 py-2 rounded">
-              <Link to="/">Sign in to continue</Link>
+              <Link className="text-red" to="/Homepage">
+                Continute to Homepage
+              </Link>
             </button>
           </section>
         </>
@@ -107,7 +108,7 @@ const Register = () => {
                 </Components.SignUpTitle>
                 <Components.Input
                   type="text"
-                  id="fullname"
+                  id="username"
                   ref={userRef}
                   autoComplete="off"
                   onChange={(e) => setUser(e.target.value)}
