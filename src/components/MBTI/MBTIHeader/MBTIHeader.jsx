@@ -3,6 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 import styled, { keyframes } from "styled-components";
 import { useEffect, useRef } from "react";
 import { SliderMBTI } from "../../../data/MBTI/MBTI";
+import { Link } from "react-router-dom";
 
 const marqueeAnimation = keyframes`
  from {
@@ -65,10 +66,10 @@ const MBTIHeader = () => {
                 Trắc nghiệm tính cách MBTI
               </h1>
             </div>
-            <a className="mbti-header__top-content--button">
+            <Link to="/mbtiquizz" className="mbti-header__top-content--button">
               Làm bài test
               <FaArrowRight size={28} color="white" />
-            </a>
+            </Link>
           </div>
           <div className="mbti-header__personalities">
             <MarqueeContainer ref={marqueeRef}>
