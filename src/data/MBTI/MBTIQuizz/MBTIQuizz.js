@@ -1,317 +1,784 @@
 export const MBTIQuestion = [
   {
     id: "1",
-    question: "Trong một buổi tiệc,bạn sẽ: ",
-    answer1: "Thoải mái trò chuyện với tất cả mọi người kể cả người lạ",
-    answer2: "Chỉ tương tác với những người bạn quen",
+    question: "Trong một buổi tiệc, bạn sẽ:",
+    answers: [
+      {
+        value: "e",
+        name: "q1",
+        text: "Thoải mái trò chuyện với tất cả mọi người kể cả người lạ",
+      },
+      {
+        value: "i",
+        name: "q1",
+        text: "Chỉ tương tác với những người bạn quen",
+      },
+    ],
   },
   {
     id: "2",
-    question: "Bạn thiên về: ",
-    answer1: "Thực tế hơn là suy đoán ",
-    answer2: "Suy đoán hơn là thực tế ",
+    question: "Bạn thiên về:",
+    answers: [
+      { value: "s", name: "q2", text: "Thực tế hơn là suy đoán" },
+      { value: "n", name: "q2t", text: "Suy đoán hơn là thực tế" },
+    ],
   },
   {
     id: "3",
-    question: "Điều gì khiến bạn cảm thấy tệ hơn: ",
-    answer1: "Đầu óc trên mây, viển vông và phi thực tế ",
-    answer2: "Nhàm chán đơn điệu",
+    question: "Điều gì khiến bạn cảm thấy tệ hơn:",
+    answers: [
+      {
+        value: "s",
+        name: "q3",
+        text: "Đầu óc trên mây, viển vông và phi thực tế",
+      },
+      { value: "n", name: "q3", text: "Nhàm chán đơn điệu" },
+    ],
   },
   {
     id: "4",
-    question: "Bạn thấy ấn tượng hơn bởi: ",
-    answer1: "Nguyên lý, nguyên tắc",
-    answer2: " Cảm xúc, tình cảm",
+    question: "Bạn thấy ấn tượng hơn bởi:",
+    answers: [
+      { value: "t", name: "q4", text: "Nguyên lý, nguyên tắc" },
+      { value: "f", name: "q4", text: "Cảm xúc, tình cảm" },
+    ],
   },
   {
     id: "5",
     question: "Bạn dễ bị thuyết phục hơn bởi những sự việc:",
-    answer1: "Logic, dựa trên bằng chứng và lý lẽ",
-    answer2: "Cảm động, thiên về cảm xúc và tình người",
+    answers: [
+      {
+        value: "t",
+        name: "q5",
+        text: "Logic, dựa trên bằng chứng và lý lẽ",
+      },
+      {
+        value: "f",
+        name: "q5",
+        text: "Cảm động, thiên về cảm xúc và tình người",
+      },
+    ],
   },
   {
     id: "6",
     question: "Bạn thích làm việc:",
-    answer1: "Với thời hạn (deadline) rõ ràng",
-    answer2: "Tùy hứng, linh hoạt",
-  },
-  {
-    id: "6",
-    question: "Bạn thích làm việc:",
-    answer1: "Với thời hạn (deadline) rõ ràng",
-    answer2: "Tùy hứng, linh hoạt",
+    answers: [
+      {
+        value: "j",
+        name: "q6",
+        text: "Với thời hạn (deadline) rõ ràng",
+      },
+      {
+        value: "p",
+        name: "q6",
+        text: "Tùy hứng, linh hoạt",
+      },
+    ],
   },
   {
     id: "7",
     question: "Khi lựa chọn, bạn thường:",
-    answer1: "Xem xét kỹ lưỡng từ nhiều khía cạnh",
-    answer2: "Tin vào suy đoán và linh cảm của mình",
+    answers: [
+      {
+        value: "j",
+        name: "q7",
+        text: "Xem xét kỹ lưỡng từ nhiều khía cạnh",
+      },
+      {
+        value: "p",
+        name: "q7",
+        text: "Tin vào suy đoán và linh cảm của mình",
+      },
+    ],
   },
   {
     id: "8",
     question: "Tại các buổi gặp mặt, bạn sẽ:",
-    answer1: "Muốn tận hưởng bữa tiệc và ở lại đến cuối cùng",
-    answer2: "Nhanh chóng thấy mệt mỏi và muốn ra về sớm",
+    answers: [
+      {
+        value: "e",
+        name: "q8",
+        text: "Muốn tận hưởng bữa tiệc và ở lại đến cuối cùng",
+      },
+      {
+        value: "i",
+        name: "q8",
+        text: "Nhanh chóng thấy mệt mỏi và muốn ra về sớm",
+      },
+    ],
   },
   {
     id: "9",
     question: "Tuýp người nào sẽ thu hút bạn hơn?",
-    answer1: "Người logic và thực tế",
-    answer2: "Người có khả năng tưởng tượng phong phú",
+    answers: [
+      {
+        value: "s",
+        name: "q9",
+        text: "Người logic và thực tế",
+      },
+      {
+        value: "n",
+        name: "q9",
+        text: "Người có khả năng tưởng tượng phong phú",
+      },
+    ],
   },
   {
     id: "10",
     question: "Bạn hứng thú hơn với những sự việc:",
-    answer1: " Đã và đang xảy ra",
-    answer2: "Có khả năng xảy ra",
+    answers: [
+      {
+        value: "s",
+        name: "q10",
+        text: "Đã và đang xảy ra",
+      },
+      {
+        value: "n",
+        name: "q10",
+        text: "Có khả năng xảy ra",
+      },
+    ],
   },
   {
     id: "11",
     question: "Bạn thường đánh giá người khác dựa trên:",
-    answer1: "Quy định, nguyên tắc",
-    answer2: "Hoàn cảnh cụ thể",
+    answers: [
+      {
+        value: "t",
+        name: "q11",
+        text: "Quy định, nguyên tắc",
+      },
+      {
+        value: "f",
+        name: "q11",
+        text: "Hoàn cảnh cụ thể",
+      },
+    ],
   },
   {
     id: "12",
     question:
       "Khi tiếp cận người khác, bạn thường đánh giá họ dựa trên góc nhìn nào?",
-    answer1: "Khách quan",
-    answer2: "Chủ quán",
+    answers: [
+      {
+        value: "t",
+        name: "q12",
+        text: "Khách quan",
+      },
+      {
+        value: "f",
+        name: "q12",
+        text: "Chủ quán",
+      },
+    ],
   },
   {
     id: "13",
     question: "Bạn thường là người:",
-    answer1: "Luôn đúng giờ ",
-    answer2: "Thong thả, linh hoạt về thời gian",
+    answers: [
+      {
+        value: "j",
+        name: "q13",
+        text: "Luôn đúng giờ ",
+      },
+      {
+        value: "p",
+        name: "q13",
+        text: "Thong thả, linh hoạt về thời gian",
+      },
+    ],
   },
   {
     id: "14",
     question: "Sau khi trải qua một kỳ thi, bạn thường:",
-    answer1: "Cảm thấy nhẹ nhõm và bắt đầu lên lịch đi chơi",
-    answer2: "Lo lắng về kết quả sẽ đạt được",
+    answers: [
+      {
+        value: "j",
+        name: "q14",
+        text: "Cảm thấy nhẹ nhõm và bắt đầu lên lịch đi chơi",
+      },
+      {
+        value: "p",
+        name: "q14",
+        text: "Lo lắng về kết quả sẽ đạt được",
+      },
+    ],
   },
   {
     id: "15",
     question: "Trong nhóm, bạn thường là người:",
-    answer1: "Luôn nắm bắt thông tin kịp thời",
-    answer2: "Biết thông tin muộn hơn",
+    answers: [
+      {
+        value: "e",
+        name: "q15",
+        text: "Luôn nắm bắt thông tin kịp thời",
+      },
+      {
+        value: "i",
+        name: "q15",
+        text: "Biết thông tin muộn hơn",
+      },
+    ],
   },
   {
     id: "16",
     question: "Cách bạn giải quyết những công việc thường ngày là:",
-    answer1: "Làm theo cách thông thường",
-    answer2: "Làm theo cách của riêng mình",
+    answers: [
+      {
+        value: "s",
+        name: "q16",
+        text: "Làm theo cách thông thường",
+      },
+      {
+        value: "n",
+        name: "q16",
+        text: "Làm theo cách của riêng mình",
+      },
+    ],
   },
   {
     id: "17",
     question: "Theo bạn, các nhà văn nên:",
-    answer1:
-      "Viết chính xác những gì họ nghĩ, diễn đạt một cách rõ ràng, nghĩa trên mặt chữ",
-    answer2: "Diễn đạt bằng biện pháp so sánh, liên tưởng, ví von thâm sâu",
+    answers: [
+      {
+        value: "s",
+        name: "q17",
+        text: "Viết chính xác những gì họ nghĩ, diễn đạt một cách rõ ràng, nghĩa trên mặt chữ",
+      },
+      {
+        value: "n",
+        name: "q17",
+        text: "Diễn đạt bằng biện pháp so sánh, liên tưởng, ví von thâm sâu",
+      },
+    ],
   },
   {
     id: "18",
     question: "Điều gì thu hút bạn hơn?",
-    answer1: "Tính nhất quán trong tư tưởng",
-    answer2: "Mối quan hệ hài hòa giữa người với người",
+    answers: [
+      {
+        value: "t",
+        name: "q18",
+        text: "Tính nhất quán trong tư tưởng",
+      },
+      {
+        value: "f",
+        name: "q18",
+        text: "Mối quan hệ hài hòa giữa người với người",
+      },
+    ],
   },
   {
     id: "19",
     question: "Bạn cảm thấy thoải mái hơn khi đưa ra nhận xét:",
-    answer1: "Dựa trên logic",
-    answer2: "Dựa trên quan điểm, giá trị cá nhân",
+    answers: [
+      {
+        value: "t",
+        name: "q19",
+        text: "Dựa trên logic",
+      },
+      {
+        value: "f",
+        name: "q19",
+        text: "Dựa trên quan điểm, giá trị cá nhân",
+      },
+    ],
   },
   {
     id: "20",
     question: "Bạn thích những điều:",
-    answer1: "Theo kế hoạch và ổn định",
-    answer2: "Linh hoạt và có thể thay đổi",
+    answers: [
+      {
+        value: "j",
+        name: "q20",
+        text: "Theo kế hoạch và ổn định",
+      },
+      {
+        value: "p ",
+        name: "q20",
+        text: "Linh hoạt và có thể thay đổi",
+      },
+    ],
   },
   {
     id: "21",
     question: "Một phút thật lòng với bản thân nhé. Bạn là người:",
-    answer1: "Nghiêm túc, quyết đoán",
-    answer2: "Dễ tính, thoải mái",
+    answers: [
+      {
+        value: "j",
+        name: "q21",
+        text: "Nghiêm túc, quyết đoán",
+      },
+      {
+        value: "p",
+        name: "q21",
+        text: "Dễ tính, thoải mái",
+      },
+    ],
   },
   {
     id: "22",
-    question: " Khi nói chuyện điện thoại, bạn:",
-    answer1: "Hiếm khi băn khoăn đến những điều mình sẽ nói",
-    answer2: "Thường chuẩn bị trước những điều mình sẽ nói",
+    question: "Khi nói chuyện điện thoại, bạn:",
+    answers: [
+      {
+        value: "e",
+        name: "q22",
+        text: "Hiếm khi băn khoăn đến những điều mình sẽ nói",
+      },
+      {
+        value: "i",
+        name: "q22",
+        text: "Thường chuẩn bị trước những điều mình sẽ nói",
+      },
+    ],
   },
   {
     id: "23",
     question: " Theo bạn, các sự việc và hiện tượng:",
-    answer1: "Tự nói lên bản chất của chính nó",
-    answer2: "Tồn tại để minh họa cho các quy luật, quy tắc khác",
+    answers: [
+      {
+        value: "s",
+        name: "q23",
+        text: "Tự nói lên bản chất của chính nó",
+      },
+      {
+        value: "n",
+        name: "q23",
+        text: "Tồn tại để minh họa cho các quy luật, quy tắc khác",
+      },
+    ],
   },
   {
     id: "24",
     question: "Những người có tầm nhìn xa:",
-    answer1: "Ở mức độ nào đó, họ thường gây khó chịu cho người khác",
-    answer2: "Khá thú vị, lôi cuốn",
+    answers: [
+      {
+        value: "s",
+        name: "q24",
+        text: "Ở mức độ nào đó, họ thường gây khó chịu cho người khác",
+      },
+      {
+        value: "n",
+        name: "q24",
+        text: "Khá thú vị, lôi cuốn",
+      },
+    ],
   },
   {
     id: "25",
     question: "Bạn là người:",
-    answer1: "Có cái đầu lạnh",
-    answer2: "Có trái tim ấm",
+    answers: [
+      {
+        value: "t",
+        name: "q25",
+        text: "Có cái đầu lạnh",
+      },
+      {
+        value: "f",
+        name: "q25",
+        text: "Có trái tim ấm",
+      },
+    ],
   },
   {
     id: "26",
     question: "Bạn cảm thấy tồi tệ hơn khi đối mặt với:",
-    answer1: "Sự bất công",
-    answer2: "Sự tàn nhẫn",
+    answers: [
+      {
+        value: "t",
+        name: "q26",
+        text: "Sự bất công",
+      },
+      {
+        value: "f",
+        name: "q26",
+        text: "Sự tàn nhẫn",
+      },
+    ],
   },
   {
     id: "27",
     question: "Theo bạn, quyết định nên được đưa ra:",
-    answer1: "Dựa trên việc cân nhắc và lựa chọn kỹ lưỡng",
-    answer2: "Thuận theo tự nhiên, nước chảy mây trôi",
+    answers: [
+      {
+        value: "j",
+        name: "q27",
+        text: "Dựa trên việc cân nhắc và lựa chọn kỹ lưỡng",
+      },
+      {
+        value: "p",
+        name: "q27",
+        text: "Thuận theo tự nhiên, nước chảy mây trôi",
+      },
+    ],
   },
   {
     id: "28",
     question: "Khi đi mua sắm, bạn thích cảm giác nào hơn?",
-    answer1: "Đã mua được thứ mình muốn",
-    answer2: "Đang trong quá trình lựa chọn",
+    answers: [
+      {
+        value: "j",
+        name: "q28",
+        text: "Đã mua được thứ mình muốn",
+      },
+      {
+        value: "p",
+        name: "q28",
+        text: "Đang trong quá trình lựa chọn",
+      },
+    ],
   },
   {
     id: "29",
-    question: " Trong công ty, bạn là người:",
-    answer1: "Khởi xướng các câu chuyện",
-    answer2: "Đợi người khác khởi xướng rồi tham gia vào",
+    question: "Trong công ty, bạn là người:",
+    answers: [
+      {
+        value: "e",
+        name: "q29",
+        text: "Khởi xướng các câu chuyện",
+      },
+      {
+        value: "i",
+        name: "q29",
+        text: "Đợi người khác khởi xướng rồi tham gia vào",
+      },
+    ],
   },
   {
     id: "30",
     question: "Với những kiến thức, quy luật đã được xã hội công nhận, bạn sẽ:",
-    answer1: "Tin tưởng không nghi ngờ",
-    answer2: "Không ngừng đặt nghi vấn về tính chính xác",
+    answers: [
+      {
+        value: "s",
+        name: "q30",
+        text: "Tin tưởng không nghi ngờ",
+      },
+      {
+        value: "n",
+        name: "q30",
+        text: "Không ngừng đặt nghi vấn về tính chính xác",
+      },
+    ],
   },
   {
     id: "31",
     question: "Theo bạn, trẻ em thường không:",
-    answer1: "Tự mình phát huy hết năng lực",
-    answer2: "Khai thác tối đa trí tưởng tượng của mình",
+    answers: [
+      {
+        value: "s",
+        name: "q31",
+        text: "Tự mình phát huy hết năng lực",
+      },
+      {
+        value: "n",
+        name: "q31",
+        text: "Khai thác tối đa trí tưởng tượng của mình",
+      },
+    ],
   },
   {
     id: "32",
     question: "Khi mua xe hơi, bạn nghĩ yếu tố nào quan trọng hơn?",
-    answer1: "Nhu cầu sử dụng",
-    answer2: "Sở thích cá nhân",
+    answers: [
+      {
+        value: "t",
+        name: "q32",
+        text: "Nhu cầu sử dụng",
+      },
+      {
+        value: "f",
+        name: "q32",
+        text: "Sở thích cá nhân",
+      },
+    ],
   },
   {
     id: "33",
     question: "Tính cách của bạn nghiêng về:",
-    answer1: "Cứng rắn",
-    answer2: "Mềm mỏng",
-  },
-  {
-    id: "33",
-    question: "Tính cách của bạn nghiêng về:",
-    answer1: "Cứng rắn",
-    answer2: "Mềm mỏng",
+    answers: [
+      {
+        value: "t",
+        name: "q33",
+        text: "Cứng rắn",
+      },
+      {
+        value: "f",
+        name: "q33",
+        text: "Mềm mỏng",
+      },
+    ],
   },
   {
     id: "34",
     question: "Khả năng nào đáng khâm phục hơn?",
-    answer1: "Tổ chức và làm việc bài bản, có phương pháp, hệ thống",
-    answer2: "Dễ dàng thích ứng và linh hoạt trong mọi tình huống",
+    answers: [
+      {
+        value: "j",
+        name: "q34",
+        text: "Tổ chức và làm việc bài bản, có phương pháp, hệ thống",
+      },
+      {
+        value: "p",
+        name: "q34",
+        text: "Dễ dàng thích ứng và linh hoạt trong mọi tình huống",
+      },
+    ],
   },
   {
     id: "35",
     question: "Bạn mong muốn điều gì hơn ở cấp trên?",
-    answer1: "Chuyên môn xuất sắc",
-    answer2: "Tư duy cởi mở",
+    answers: [
+      {
+        value: "j",
+        name: "q35",
+        text: "Chuyên môn xuất sắc",
+      },
+      {
+        value: "p",
+        name: "q35",
+        text: "Tư duy cởi mở",
+      },
+    ],
   },
   {
     id: "36",
-    question: " Khi đối mặt với những vấn đề mới, bạn thường cảm thấy:",
-    answer1: "Hào hứng, tràn đầy năng lượng",
-    answer2: "Mệt mỏi, nhanh chóng bị hút cạn sức lực",
+    question: "Khi đối mặt với những vấn đề mới, bạn thường cảm thấy:",
+    answers: [
+      {
+        value: "e",
+        name: "q36",
+        text: "Hào hứng, tràn đầy năng lượng",
+      },
+      {
+        value: "i",
+        name: "q36",
+        text: "Mệt mỏi, nhanh chóng bị hút cạn sức lực",
+      },
+    ],
   },
   {
     id: "37",
     question: "Tính cách của bạn thiên về:",
-    answer1: "Thực tế",
-    answer2: "Mơ mộng",
+    answers: [
+      {
+        value: "s",
+        name: "q37",
+        text: "Thực tế",
+      },
+      {
+        value: "n",
+        name: "q37",
+        text: "Mơ mộng",
+      },
+    ],
   },
   {
     id: "38",
     question: "Bạn sẽ quan tâm hơn đến:",
-    answer1: "Giá trị thực tế mà một người mang lại",
-    answer2: "Cảm nhận, suy nghĩ của đối phương",
+    answers: [
+      {
+        value: "s",
+        name: "q38",
+        text: "Giá trị thực tế mà một người mang lại",
+      },
+      {
+        value: "n",
+        name: "q38",
+        text: "Cảm nhận, suy nghĩ của đối phương",
+      },
+    ],
   },
   {
     id: "39",
     question: "Bạn sẽ quan tâm hơn đến:",
-    answer1: "Giá trị thực tế mà một người mang lại",
-    answer2: "Cảm nhận, suy nghĩ của đối phương",
+    answers: [
+      {
+        value: "t",
+        name: "q39",
+        text: "Giá trị thực tế mà một người mang lại",
+      },
+      {
+        value: "f",
+        name: "q39",
+        text: "Cảm nhận, suy nghĩ của đối phương",
+      },
+    ],
   },
   {
     id: "40",
     question: "Bạn sẽ lựa chọn công việc nào?",
-    answer1: "Công việc bạn không thực sự thích nhưng đem lại thu nhập cao",
-    answer2: "Công việc mà bạn hằng mơ ước nhưng thu nhập trung bình",
+    answers: [
+      {
+        value: "t",
+        name: "q40",
+        text: "Công việc bạn không thực sự thích nhưng đem lại thu nhập cao",
+      },
+      {
+        value: "f",
+        name: "q40",
+        text: "Công việc mà bạn hằng mơ ước nhưng thu nhập trung bình",
+      },
+    ],
   },
   {
     id: "41",
     question: "Bạn thích được điều hướng công việc theo cách:",
-    answer1: "Giao việc trọn gói, bàn giao 100% sau khi hoàn thành",
-    answer2: "Giao việc hàng ngày, từng bước hoàn thành công việc",
+    answers: [
+      {
+        value: "j",
+        name: "q41",
+        text: "Giao việc trọn gói, bàn giao 100% sau khi hoàn thành",
+      },
+      {
+        value: "p",
+        name: "q41",
+        text: "Giao việc hàng ngày, từng bước hoàn thành công việc",
+      },
+    ],
   },
   {
     id: "42",
     question: "Bạn thường tìm kiếm những điều:",
-    answer1: "Được sắp xếp theo thứ tự rõ ràng",
-    answer2: "Ngẫu nhiên, tùy hứng",
+    answers: [
+      {
+        value: "j",
+        name: "q42",
+        text: "Được sắp xếp theo thứ tự rõ ràng",
+      },
+      {
+        value: "p",
+        name: "q42",
+        text: "Ngẫu nhiên, tùy hứng",
+      },
+    ],
   },
   {
     id: "43",
     question: "Bạn thường kết giao:",
-    answer1: "Với nhiều bạn nhưng không quá thân",
-    answer2: "Với ít bạn nhưng tình cảm khăng khít",
+    answers: [
+      {
+        value: "e",
+        name: "q43",
+        text: "Với nhiều bạn nhưng không quá thân",
+      },
+      {
+        value: "i",
+        name: "q43",
+        text: "Với ít bạn nhưng tình cảm khăng khít",
+      },
+    ],
   },
   {
     id: "44",
     question: "Điều gì ảnh hưởng tới quyết định của bạn nhiều hơn?",
-    answer1: "Tình hình thực tế",
-    answer2: "Nguyên tắc, luật lệ",
+    answers: [
+      {
+        value: "s",
+        name: "q44",
+        text: "Tình hình thực tế",
+      },
+      {
+        value: "n",
+        name: "q44",
+        text: "Nguyên tắc, luật lệ",
+      },
+    ],
   },
   {
     id: "45",
     question: "Bạn thấy hứng thú hơn với việc:",
-    answer1: "Sản xuất và phân phối",
-    answer2: "Thiết kế và nghiên cứu",
+    answers: [
+      {
+        value: "s",
+        name: "q45",
+        text: "Sản xuất và phân phối",
+      },
+      {
+        value: "n",
+        name: "q45",
+        text: "Thiết kế và nghiên cứu",
+      },
+    ],
   },
   {
     id: "46",
     question: "Bạn thường được tán thưởng vì:",
-    answer1: "Là người có tư duy logic",
-    answer2: "Là người tinh tế, tình cảm",
+    answers: [
+      {
+        value: "t",
+        name: "q46",
+        text: "Là người có tư duy logic",
+      },
+      {
+        value: "f",
+        name: "q46",
+        text: "Là người tinh tế, tình cảm",
+      },
+    ],
   },
   {
     id: "47",
     question: " Bạn thấy điều gì giá trị hơn ở bản thân mình?",
-    answer1: "Tinh thần kiên định, vững vàng",
-    answer2: "Sự toàn tâm, cống hiến",
+    answers: [
+      {
+        value: "t",
+        name: "q47",
+        text: "Tinh thần kiên định, vững vàng",
+      },
+      {
+        value: "f",
+        name: "q47",
+        text: "Sự toàn tâm, cống hiến",
+      },
+    ],
   },
   {
     id: "48",
     question: "Bạn đánh giá cao:",
-    answer1: "Tuyên bố cuối cùng, không thay đổi",
-    answer2: "Tuyên bố mang tính dự kiến, có thể thay đổi",
+    answers: [
+      {
+        value: "j",
+        name: "q48",
+        text: "Tuyên bố cuối cùng, không thay đổi",
+      },
+      {
+        value: "p",
+        name: "q48",
+        text: "Tuyên bố mang tính dự kiến, có thể thay đổi",
+      },
+    ],
   },
   {
     id: "49",
     question: " Bạn thấy nhẹ nhõm hơn:",
-    answer1: "Trước khi đưa ra quyết định",
-    answer2: "Sau khi đưa ra quyết định",
+    answers: [
+      {
+        value: "j",
+        name: "q49",
+        text: "Trước khi đưa ra quyết định",
+      },
+      {
+        value: "p",
+        name: "q49",
+        text: "Sau khi đưa ra quyết định",
+      },
+    ],
   },
   {
     id: "50",
     question: " Bạn đánh giá bản thân là người như thế nào?",
-    answer1: "Tôi có thể dễ dàng bắt chuyện với người lạ",
-    answer2: "Tôi không có hứng thú trò chuyện với người lạ",
+    answers: [
+      {
+        value: "e",
+        name: "q50",
+        text: "Tôi có thể dễ dàng bắt chuyện với người lạ",
+      },
+      {
+        value: "i",
+        name: "q50",
+        text: "Tôi không có hứng thú trò chuyện với người lạ",
+      },
+    ],
   },
   {
     id: "51",
@@ -403,44 +870,38 @@ export const MBTIQuestion = [
   },
   {
     id: "64",
-    question: " Bạn nghĩ mình là người:",
-    answer1: "Cởi mở, dễ gần",
-    answer2: "Kín tiếng, khó đoán",
+    question: " Bạn nghĩ mình là người::",
+    answer1: "Làm việc theo thói quen",
+    answer2: "Hay thay đổi, thích thử nghiệm những điều mới",
   },
   {
-    id: "65",
-    question: " Khi viết lách, bạn có xu hướng:",
-    answer1: "Viết những áng văn bay bổng (thiên về nghĩa bóng)",
-    answer2: "Viết về những điều thực tế (thiên về nghĩa đen)",
+    id: "63",
+    question: " Trong công việc, bạn thường:",
+    answer1: "Làm việc theo thói quen",
+    answer2: "Hay thay đổi, thích thử nghiệm những điều mới",
   },
   {
-    id: "66",
-    question: " Là một cấp trên, bạn cảm thấy điều gì khó hơn?",
-    answer1: "Là một cấp trên, bạn cảm thấy điều gì khó hơn?",
-    answer2: "Hiểu và chia sẻ với cấp dưới",
+    id: "63",
+    question: " Trong công việc, bạn thường:",
+    answer1: "Làm việc theo thói quen",
+    answer2: "Hay thay đổi, thích thử nghiệm những điều mới",
   },
   {
-    id: "67",
-    question: "ạn cảm thấy mình cần trở nên:",
-    answer1: "Lý trí hơn",
-    answer2: "Tình cảm hơn",
+    id: "63",
+    question: " Trong công việc, bạn thường:",
+    answer1: "Làm việc theo thói quen",
+    answer2: "Hay thay đổi, thích thử nghiệm những điều mới",
   },
   {
-    id: "68",
-    question: "Điều gì khiến bạn khó chấp nhận hơn?",
-    answer1: "Hành động thiếu suy nghĩ, gây ra sai phạm lớn",
-    answer2: "Sự chỉ trích, phê phán nghiêm khắc quá mức",
+    id: "63",
+    question: " Trong công việc, bạn thường:",
+    answer1: "Làm việc theo thói quen",
+    answer2: "Hay thay đổi, thích thử nghiệm những điều mới",
   },
   {
-    id: "69",
-    question: "Bạn sẽ lựa chọn:",
-    answer1: "Sự kiện đã được lên kế hoạch trước",
-    answer2: "Sự kiện chưa được lên kế hoạch trước",
-  },
-  {
-    id: "70",
-    question: "Phong cách làm việc của bạn là gì?",
-    answer1: "Cân nhắc thận trọng",
-    answer2: "Tự nhiên, tự phát",
+    id: "63",
+    question: " Trong công việc, bạn thường:",
+    answer1: "Làm việc theo thói quen",
+    answer2: "Hay thay đổi, thích thử nghiệm những điều mới",
   },
 ];

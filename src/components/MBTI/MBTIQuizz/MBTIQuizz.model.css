@@ -159,3 +159,20 @@
 .button-1:focus {
   background-color: #f082ac;
 }
+.pull-left {
+  margin: 0 20px 0 0;
+  width: 80px;
+}
+.pull-right {
+  margin: 0 0 0 20px;
+  width: 80px;
+}
+.progress {
+  position: relative;
+}
+.center-bar {
+  border-left: 1px dashed #fff;
+  height: 100%;
+  left: 50%;
+  position: absolute;
+}

@@ -39,30 +39,33 @@ const MBTIQuizz = () => {
                     {question.id}. {question.question}
                   </div>
                   <div className="mbti-test-question__answers">
-                    {["answer1", "answer2"].map((answerKey) => (
-                      <div
-                        key={answerKey}
-                        className={`mbti-test-question__answers--item ${
-                          selectedAnswers[question.id] === answerKey
-                            ? "checked"
-                            : ""
-                        }`}
-                      >
-                        <label>
-                          <input
-                            type="radio"
-                            name={`answers[${question.id}]`}
-                            value={answerKey}
-                            data-question-id={question.id}
-                            checked={selectedAnswers[question.id] === answerKey}
-                            onChange={() =>
-                              handleAnswerChange(question.id, answerKey)
-                            }
-                          />
-                          <span>{question[answerKey]}</span>
-                        </label>
-                      </div>
-                    ))}
+                    {question.answers &&
+                      question.answers.map((answer) => (
+                        <div
+                          key={answer.value}
+                          className={`mbti-test-question__answers--item ${
+                            selectedAnswers[question.id] === answer.value
+                              ? "checked"
+                              : ""
+                          }`}
+                        >
+                          <label>
+                            <input
+                              type="radio"
+                              name={`answers[${question.id}]`}
+                              value={answer.value}
+                              data-question-id={question.id}
+                              checked={
+                                selectedAnswers[question.id] === answer.value
+                              }
+                              onChange={() =>
+                                handleAnswerChange(question.id, answer.value)
+                              }
+                            />
+                            <span>{answer.text}</span>
+                          </label>
+                        </div>
+                      ))}
                   </div>
                 </li>
               ))}
@@ -72,6 +75,13 @@ const MBTIQuizz = () => {
                 Xem kết quả
               </button>
             </p>
+            <div className="quizz-results">
+              <h2 className="type" id="type">
+                <p className="type-description" id="type-details">
+                  <strong id="type-title"></strong>
+                </p>
+              </h2>
+            </div>
           </div>
         </div>
       </div>
