@@ -10,7 +10,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import axios from "../../api/axios";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
@@ -68,7 +67,7 @@ const Register = () => {
     console.log(email, pwd);
     try {
       setSuccess(true);
-    } catch (error) {}
+    } catch (error) { /* empty */ }
   };
   return (
     <div>
@@ -76,8 +75,8 @@ const Register = () => {
         <>
           <Navbar />
           <section className="text-center">
-            <h1 className="text-4xl font-bold mb-4 py-10">Sign Up Success</h1>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded">
+            <h1 className="py-10 mb-4 text-4xl font-bold">Sign Up Success</h1>
+            <button className="px-4 py-2 text-white bg-blue-500 rounded">
               <Link className="text-red" to="/Homepage">
                 Continute to Homepage
               </Link>

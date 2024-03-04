@@ -46,11 +46,11 @@ const StyledListMenu = styled(Link)`
 `;
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
+  // const [toggle, setToggle] = useState(false);
 
-  const handleClick = () => {
-    setToggle(!toggle);
-  };
+  // const handleClick = () => {
+  //   setToggle(!toggle);
+  // };
 
   return (
     <StyledContainer className="container">
@@ -60,10 +60,10 @@ const Navbar = () => {
         </Link>
       </StyledLogo>
 
-      <StyledRight className="right pr-4">
+      <StyledRight className="pr-4 right">
         <StyledMenuComponent className="menu">
           <StyledMenuUl className="menu">
-            <StyledListMenu to="/">Trang chủ</StyledListMenu>
+            <StyledListMenu to="/Homepage">Trang chủ</StyledListMenu>
             <StyledListMenu>Tính điểm </StyledListMenu>
             <StyledListMenu>Điểm chuẩn</StyledListMenu>
             <StyledListMenu to="/QuizzPersonality">Công cụ</StyledListMenu>
@@ -72,7 +72,7 @@ const Navbar = () => {
       </StyledRight>
 
       <StyledMenuComponent className="">
-        <button className="flex justify-between items-center bg-transparent gap-2">
+        <button className="flex items-center justify-between gap-2 bg-transparent">
           <FontAwesomeIcon className="w-4 h-6 " icon={faUser} />
           Login
         </button>
@@ -83,9 +83,9 @@ const Navbar = () => {
         </Link>
       </StyledMenuComponent>
 
-      <div className="md:hidden" onClick={handleClick}>
+      {/* <div className="md:hidden" onClick={handleClick}>
         <FontAwesomeIcon icon={toggle ? faClose : faBars} />
-      </div>
+      </div> */}
     </StyledContainer>
   );
 };
