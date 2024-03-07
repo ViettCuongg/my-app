@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Footer2 from "../Footer2/Footer2";
+// import Footer2 from "../Footer2/Footer2";
 import Navbar from "../HomePage/header/Navbar";
 import * as Components from "./RegisterForm";
 import "./Register.module.css";
@@ -227,9 +227,9 @@ const Register = () => {
             </Components.OverlayContainer>
           </Components.Container>
 
-          <Components.Footer>
+          {/* <Components.Footer>
             <Footer2 />
-          </Components.Footer>
+          </Components.Footer> */}
         </>
       )}
     </div>

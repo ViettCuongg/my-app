@@ -17,6 +17,18 @@ export default function DetailMajors() {
                     </div>
                 </div>
              </div>
+             <div className="grid grid-cols-4 mt-2">
+                  <nav className="bg-white col-span-1 rounded-lg">
+                    <ul className="flex flex-col">
+                      <li className="text-xl cursor-pointer p-2 rounded-md font-normal hover:bg-silver">Kỹ thuật phần mềm</li>
+                      <li className="text-xl cursor-pointer p-2 rounded-md font-normal hover:bg-silver">Mạng máy tính</li>
+                      <li className="text-xl cursor-pointer p-2 rounded-md font-normal hover:bg-silver">Truyên thông và dữ liệu</li>
+                    </ul>
+                  </nav>
+                  <div className="col-span-3">
+                    
+                  </div>
+                </div>
            </div>
         <Footer2/>
     </>

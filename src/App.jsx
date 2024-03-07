@@ -5,6 +5,7 @@ import Register from "./components/SignUp/Register";
 import QuizzPersonality from "./components/QuizzPersonality/QuizzPersonality";
 import MBTIIntro from "./components/MBTI/MBTIIntro";
 import DetailMajors from "./page/DetailMajors";
+import Profile from "./page/Profile";
 
 // import Register from "../../SignUp/Register";
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/QuizzPersonality" element={<QuizzPersonality />} />
         <Route path="/mbti-intro" element={<MBTIIntro />} />
         <Route path="/detail/:id" element={<DetailMajors/>} />
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
     </BrowserRouter>
   );
