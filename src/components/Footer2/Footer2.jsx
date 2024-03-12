@@ -6,11 +6,11 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 const Footer2 = () => {
   return (
-    <div className={`w-full bg-white ${css.container}`}>
+    <div className={`w-full bg-white ${css.container} container mx-auto`}>
       <div className="md:max-w-[1480px] m-auto grid md:grid-cols-5 max-[780px]:grid-cols-2  gap-8 max-w-[600px] pt-6 px-4 md:px-0">
         <div className="col-span-2">
           <img src={logoTDT} className="h-[25px]" />
-          <h3 className="text-2xl font-bold mt-10">Contact Us</h3>
+          <h3 className="mt-10 text-2xl font-bold">Contact Us</h3>
           <h3 className="py-2 text-[#6D737A]">Call : +123 400 123</h3>
           <h3 className="py-2 text-[#6D737A]">
             Praesent nulla massa, hendrerit <br></br> vestibulum gravida in,

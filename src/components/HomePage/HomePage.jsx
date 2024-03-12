@@ -17,7 +17,7 @@ const Homepage = () => {
       <Product />
       <Footer1 />
       <Category />
-      <Footer2 />
+      <Footer2/>
     </div>
   );
 };

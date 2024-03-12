@@ -1,0 +1,24 @@
+.banner {
+    width: 100%;
+    padding: 110px 0 100px;
+    background-image: url(https://bsmart.edu.vn/assets/images/banner/banner-2.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    // margin-bottom: 80px;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(40, 37, 80, 0.8);
+}
