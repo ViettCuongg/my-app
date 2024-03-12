@@ -25,7 +25,9 @@ const Category = () => {
               <span className={css.category_icon}>
                 <FontAwesomeIcon icon={faBitcoin} />
               </span>
-              <h5>{category.name}</h5>
+              <h5 className="h-30 mt-0 font-bold text-orange">
+                {category.name}
+              </h5>
               <p>{category.detail} </p>
             </article>
           ))}

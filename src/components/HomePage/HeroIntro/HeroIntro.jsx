@@ -1,8 +1,9 @@
 import { MdQuiz } from "react-icons/md";
 import { BsArrowRight } from "react-icons/bs";
 import css from "./HeroIntro.module.css";
-import HeroImg from "../../../assets/bts.avif";
+import HeroImg from "../../../assets/CalScore/home-img1.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const transition = { duration: 3, type: "spring" };
@@ -10,17 +11,35 @@ const Hero = () => {
     <div className={css.container}>
       {/* /* Left*/}
       <div className={css.h_sides}>
-        <span className={css.text1}>Do some Quiz</span>
-        <span className={css.text1}>Hot New !!!</span>
-        <span className={css.text1}>Check your point</span>
+        <Link to="/QuizzPersonality" className={css.text1}>
+          Trắc nghiệm tính cách
+        </Link>
+        <Link to="/news" className={css.text1}>
+          Tin Tuyển sinh
+        </Link>
+        <Link to="/CalculateScore" className={css.text1}>
+          Tính điểm
+        </Link>
         <div className={css.text2}>
-          <span>Your Future!</span>
-          <span>{""} Your Money Your Feature </span>
-          <span>
-            {""} Seedily say has suitable disposal and boy. Exercise joy man
-            children rejoiced.
+          <span className="w-[250px] ">YC-YF</span>
+          <span className="w-[250px] mb-2">
+            {""}Chọn đúng trường, đúng nghành
           </span>
-          <span>{""} Seedily say has suitable disposal and boy</span>{" "}
+          <span className="w-[250px] mb-2">
+            {""}Tương lai đang ở phía trước
+          </span>
+          <span className="w-[250px] mb-2">
+            {""}2K6 quyết tâm, chúng tôi chờ bạn
+          </span>
+          <span className="w-[250px] mb-2">{""}Định hướng chọn ngành</span>
+          <span className="w-[250px] mb-2">
+            {""}Giải đáp mọi băn khoăn về QUY CHẾ TUYỂN SINH năm nay
+          </span>
+          <span className="w-[250px] mb-2">
+            {""}Trò chuyện trực tiếp cùng chuyên gia HOT nhất với 15+ năm kinh
+            nghiệm
+          </span>
+          <span className="w-[150px]">{""} </span>{" "}
         </div>
       </div>
 
@@ -41,7 +60,7 @@ const Hero = () => {
           whileInView={{ bottom: "0rem" }}
           src={HeroImg}
           alt=""
-          width={550}
+          width={600}
           className="w-30 h-30 py-8 rounded-full text-center justify-center"
         />
         <motion.div
