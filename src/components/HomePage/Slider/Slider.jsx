@@ -5,9 +5,27 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./../../../App.css";
 import "../../HomePage/Slider/Slider.css";
-
-import { ProductsData } from "../../../data/homepage/products";
+import logo from '../../../assets/goalss.jpg';
+import { useEffect, useState } from "react";
+import * as http from '../../../api/axios';
+import { Link } from "react-router-dom";
 const Slider = () => {
+  const [faculty,setFaculty] = useState([])
+
+  useEffect(()=>{
+   const fetchApigetFaculty = async()=>{
+    try {
+      const res = await http.get('faculty/')
+      setFaculty(res)
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+   } 
+   fetchApigetFaculty()
+  },[])
+
+
   return (
     <div className="s-container">
       <Swiper
@@ -20,18 +38,20 @@ const Slider = () => {
         slidesPerGroup={1}
         loop={true}
       >
-        {ProductsData.length > 0 &&
-          ProductsData.map((product, index) => (
+        {faculty.length > 0 &&
+          faculty.map((product, index) => (
             <SwiperSlide className="" key={index}>
               {product && (
                 <div className="flex gap-4" key={index}>
-                  <img src={product.img} alt=" " className="object-cover w-2/5 h-full" />
+                  <img src={logo} alt=" " className="object-cover w-2/5 h-full" />
                   <div className="flex flex-col flex-1 py-2 pe-3">
-                    <div className="w-full h-12 text-xl font-medium leading-6 text-black transition-all duration-300 cursor-pointer line-clamp-2">
-                      {product.name}
+                    <div className="w-full h-16 mb-2 text-xl font-normal leading-6 text-black transition-all duration-300 cursor-pointer line-clamp-2 hover:underline">
+                     {product.name}
                     </div>
-                    <div className="h-[62px] w-full leading-5 my-4 line-clamp-3 font-normal text-base">{product.detail}</div>
-          
+                    <div className="h-[62px] w-full leading-5 my-1 line-clamp-3 font-normal text-base"><span className="font-bold">Thành lập:</span> {product.found}</div>
+                    <Link to={product.url} className="py-1 mt-2 text-center text-white border rounded-lg cursor-pointer flex-end bg-slate hover:bg-opacity-85">
+                      Chi tiết
+                    </Link>
                   </div>
                 </div>
               )}
