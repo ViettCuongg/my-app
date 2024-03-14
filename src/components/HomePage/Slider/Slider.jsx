@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "./../../../App.css";
 import "../../HomePage/Slider/Slider.css";
 
-import { SliderProducts } from "../../../data/homepage/products";
+import { ProductsData } from "../../../data/homepage/products";
 const Slider = () => {
   return (
     <div className="s-container">
@@ -16,24 +16,26 @@ const Slider = () => {
         navigation={true}
         loopFillGroupWithBlank={true}
         slidesPerView={3}
-        spaceBetween={40}
+        spaceBetween={10}
         slidesPerGroup={1}
         loop={true}
       >
-        {SliderProducts.length > 0 &&
-          SliderProducts.map((slide, i) => (
-            <SwiperSlide className="" key={i}>
-              {slide && (
-                <div className="left-s">
-                  <div className="name">
-                    <span>{slide.name}</span>
-                    <span>{slide.detail}</span>
+        {ProductsData.length > 0 &&
+          ProductsData.map((product, index) => (
+            <SwiperSlide className="" key={index}>
+              {product && (
+                <div className="flex gap-4" key={index}>
+                  <img src={product.img} alt=" " className="object-cover w-2/5 h-full" />
+                  <div className="flex flex-col flex-1 py-2 pe-3">
+                    <div className="w-full h-12 text-xl font-medium leading-6 text-black transition-all duration-300 cursor-pointer line-clamp-2">
+                      {product.name}
+                    </div>
+                    <div className="h-[62px] w-full leading-5 my-4 line-clamp-3 font-normal text-base">{product.detail}</div>
+          
                   </div>
-                  <span>{slide.price}</span>
-                  <div className="hover:bg-sky-200 cursor-pointer">Detail</div>
                 </div>
               )}
-              <img src={slide.img} alt="product" className="img-p" />
+              
             </SwiperSlide>
           ))}
       </Swiper>
