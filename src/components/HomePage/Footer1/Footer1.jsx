@@ -1,5 +1,5 @@
 import css from "./Footer1.module.css";
-import Feedback from "../../../assets/feedbacks.jpg";
+import Feedback from "../../../assets/feedbacks.png";
 import { Swiper } from "swiper/react";
 import { SwiperSlide } from "swiper/react";
 import { TestimonialsData } from "../../../data/homepage/testimonials";
@@ -22,7 +22,7 @@ const Footer1 = () => {
           <span>100k</span>Happy Customer with us
         </div>
       </div>
-      <div className={css.reviews}>Revjjews</div>
+      <div className={css.reviews}>Reviews</div>
       <div className={css.carousel}>
         <Swiper
           slidesPerView={3}
@@ -33,7 +33,7 @@ const Footer1 = () => {
           {TestimonialsData.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <div className={css.testimonial}>
-                <img src={testimonial.image} alt="" />
+                <img className="rounded-full" src={testimonial.image} alt="" />
                 <span>{testimonial.comment}</span>
                 <hr />
                 <span> {testimonial.name}</span>

@@ -1,26 +1,26 @@
 export const CategoryData = [
     {
-        name: 'BlockChain',
-        detail: ' Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        name: 'Hệ thống test',
+        detail: ' Bao gồm 2 hệ thống test về tính cách để chọn ngành phù hợp',
     },
     {
-        name: 'BlockChain',
-        detail: ' Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        name: 'Nhóm ngàng nghề ',
+        detail: ' 65 nhóm ngành nghề với gần 300 tài liệu mô tả cụ thể theo quy chuẩn họa đồ nghề nghiệp Quốc Tế.',
     },
     {
-        name: 'BlockChain',
-        detail: ' Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        name: 'Danh mục gương sáng-Người nổi tiếng',
+        detail: ' Tổng hợp những câu chuyện về tấm gương trong học tập',
     },
     {
-        name: 'BlockChain',
-        detail: ' Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        name: 'Xu hướng Ngành nghề',
+        detail: ' Tổng hợp thông tin về xu hướng ngành nghề trong tương lai..',
     },
     {
-        name: 'BlockChain',
-        detail: ' Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        name: 'Thông tin trường ',
+        detail: 'Các thông tin về trường Đại Học Tôn Đức Thắng ',
     },
     {
-        name: 'BlockChain',
-        detail: ' Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        name: 'Hình ảnh về các hoạt động',
+        detail: ' Các hình ảnh về sự kiện và hoạt động ngoại khóa của trường .',
     },
 ];
