@@ -1,0 +1,38 @@
+.title {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+}
+h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+p {
+    padding-bottom: 12px;
+}
+.carrer-trends-table {
+    border: 1px solid #c41515;
+    border-radius: 16px;
+    width: max-content;
+    max-width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 24px;
+}
+.toc-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+li {
+    list-style: none;
+    margin-left: 25px;
+    padding-bottom: 8px;
+}

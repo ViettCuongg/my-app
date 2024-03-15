@@ -1,0 +1,18 @@
+/* TableScore.css */
+.react-data-table-component {
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.react-data-table-component th,
+.react-data-table-component td {
+    font-size: 14px; /* Adjust font size as needed */
+}
+.columnHeader {
+    font-size: 20px; /* Chỉnh kích thước font cho tiêu đề cột */
+}
+.card {
+    background: red;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
