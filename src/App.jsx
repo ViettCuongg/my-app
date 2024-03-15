@@ -9,6 +9,12 @@ import News from './News/News';
 import CalculateScore from './CalculateScore/CalculateScore';
 import DetailMajors from './page/DetailMajors';
 import Profile from './page/Profile';
+import BasePoint from './page/BasePoint/BasePoint';
+import ExcellentStudent from './page/ExcellentStudent/ExcellentStudent';
+import ExcellentStudentDetail from './page/ExcellentStudent/ExcellentStudentDetail';
+import CarrerTrends from './page/CarrerTrends/CarrerTrends';
+import AboutTDTU from './page/aboutTDTU/AboutTDTU';
+import NewsDetail1 from './News/NewsDetail/NewsDetail1';
 
 // import Register from "../../SignUp/Register";
 
@@ -26,6 +32,15 @@ const App = () => {
                 <Route path="/CalculateScore" element={<CalculateScore />} />
                 <Route path="/detail/:id" element={<DetailMajors />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/baseScore" element={<BasePoint />} />
+                <Route path="/sinh-vien-tieu-bieu" element={<ExcellentStudentDetail />} />
+                <Route path="/xu-huong-nganh-nghe-tuong-lai" element={<CarrerTrends />} />
+                <Route path="/tin-tuc-tuyen-sinh" element={<NewsDetail1 />} />
+                <Route path="/category/0" element={<MBTIIntro />} />
+                <Route path="/category/1" element={<Register />} />
+                <Route path="/category/2" element={<ExcellentStudent />} />
+                <Route path="/category/3" element={<CarrerTrends />} />
+                <Route path="/category/4" element={<AboutTDTU />} />
             </Routes>
         </BrowserRouter>
     );

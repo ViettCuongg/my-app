@@ -65,7 +65,7 @@ const Navbar = () => {
                     <StyledMenuUl className="menu">
                         <StyledListMenu to="/Homepage">Trang chủ</StyledListMenu>
                         <StyledListMenu to="/CalculateScore">Tính điểm </StyledListMenu>
-                        <StyledListMenu>Điểm chuẩn</StyledListMenu>
+                        <StyledListMenu to="/baseScore">Điểm chuẩn</StyledListMenu>
                         <StyledListMenu to="/QuizzPersonality">Công cụ</StyledListMenu>
                     </StyledMenuUl>
                 </StyledMenuComponent>

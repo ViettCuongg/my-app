@@ -22,6 +22,7 @@ export default {
             orange: '#f37435',
             // blue: "#1e40af",
             bluedark: '#1e40af',
+            customPurple: '#8a2be2',
             lightblue: '#0ea5e9',
             blue_gray: { 600: '#5f6c86', 900: '#262b35' },
             blue: { A700: '#0061ff', A700_19: '#0061ff19', A200: '#f44336' },
