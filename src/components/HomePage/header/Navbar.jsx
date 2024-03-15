@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+
 import logoTDT from '../../../assets/logo-TDT.png';
+import avatar from '../../../assets/avatar.jpg';
 import './../../../App.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const StyledContainer = styled.div`
     padding: 1.5rem;
@@ -45,45 +46,80 @@ const StyledListMenu = styled(Link)`
 `;
 
 const Navbar = () => {
-    // const [toggle, setToggle] = useState(false);
-
+    const [toggle, setToggle] = useState(false);
+    const [isLogin, setIsLogin] = useState(false);
+    const handleOpenMenu = () => {
+        setToggle(!toggle);
+    };
+    const navigate = useNavigate();
     // const handleClick = () => {
     //   setToggle(!toggle);
     // };
-
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            setIsLogin(true);
+        }
+    }, []);
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        navigate('/');
+    };
     return (
-        <StyledContainer className="container">
-            <StyledLogo className="logo">
-                <Link to="/">
-                    <StyledLogoImg src={logoTDT} alt={logoTDT} />
-                </Link>
-            </StyledLogo>
+        <div className="w-full shadow-lg">
+            <StyledContainer className="container">
+                <StyledLogo className="logo">
+                    <Link to="/">
+                        <StyledLogoImg src={logoTDT} alt={logoTDT} />
+                    </Link>
+                </StyledLogo>
 
-            <StyledRight className="right pr-4">
-                <StyledMenuComponent className="menu">
-                    <StyledMenuUl className="menu">
-                        <StyledListMenu to="/Homepage">Trang chủ</StyledListMenu>
-                        <StyledListMenu to="/CalculateScore">Tính điểm </StyledListMenu>
-                        <StyledListMenu to="/baseScore">Điểm chuẩn</StyledListMenu>
-                        <StyledListMenu to="/QuizzPersonality">Công cụ</StyledListMenu>
-                    </StyledMenuUl>
-                </StyledMenuComponent>
-            </StyledRight>
+                <StyledRight className="right pr-4">
+                    <StyledMenuComponent className="menu">
+                        <StyledMenuUl className="menu">
+                            <StyledListMenu to="/Homepage">Trang chủ</StyledListMenu>
+                            <StyledListMenu to="/CalculateScore">Tính điểm </StyledListMenu>
+                            <StyledListMenu to="/baseScore">Điểm chuẩn</StyledListMenu>
+                            <StyledListMenu to="/QuizzPersonality">Công cụ</StyledListMenu>
+                        </StyledMenuUl>
+                    </StyledMenuComponent>
+                </StyledRight>
 
-            <StyledMenuComponent className="">
-                <button className="flex items-center justify-between gap-2 bg-transparent">
-                    <FontAwesomeIcon className="w-4 h-6 " icon={faUser} />
-                    Login
-                </button>
-                <Link to="/register">
-                    <button className="px-8 py-3 rounded-md bg-[#20B486]">Signup for free</button>
-                </Link>
-            </StyledMenuComponent>
-
-            {/* <div className="md:hidden" onClick={handleClick}>
-        <FontAwesomeIcon icon={toggle ? faClose : faBars} />
-      </div> */}
-        </StyledContainer>
+                {isLogin ? (
+                    <StyledMenuComponent className="relative ">
+                        <img
+                            onClick={handleOpenMenu}
+                            src={avatar}
+                            alt=""
+                            className="w-[40px] h-[40px] object-cover rounded-full cursor-pointer"
+                        />
+                        {/* <span>Phạm Văn Vĩ</span> */}
+                        {toggle && (
+                            <div className="z-1000000 absolute -right-full mt-2 h-[90px] top-full w-48 bg-white rounded-md shadow-lg">
+                                <Link
+                                    to={`profile`}
+                                    className="block cursor-pointer px-4 py-2 text-gray-800 hover:bg-silver"
+                                >
+                                    Thông tin cá nhân
+                                </Link>
+                                <li
+                                    onClick={handleLogout}
+                                    className="block cursor-pointer px-4 py-2 text-gray-800 hover:bg-silver"
+                                >
+                                    Đăng xuất
+                                </li>
+                            </div>
+                        )}
+                    </StyledMenuComponent>
+                ) : (
+                    <StyledMenuComponent className="">
+                        <Link to="/register">
+                            <button className="px-8 py-3 rounded-md bg-[#20B486]">Signup for free</button>
+                        </Link>
+                    </StyledMenuComponent>
+                )}
+            </StyledContainer>
+        </div>
     );
 };
 
