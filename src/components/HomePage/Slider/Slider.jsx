@@ -5,9 +5,27 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./../../../App.css";
 import "../../HomePage/Slider/Slider.css";
-
-import { SliderProducts } from "../../../data/homepage/products";
+import logo from '../../../assets/goalss.jpg';
+import { useEffect, useState } from "react";
+import * as http from '../../../api/axios';
+import { Link } from "react-router-dom";
 const Slider = () => {
+  const [faculty,setFaculty] = useState([])
+
+  useEffect(()=>{
+   const fetchApigetFaculty = async()=>{
+    try {
+      const res = await http.get('faculty/')
+      setFaculty(res)
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+   } 
+   fetchApigetFaculty()
+  },[])
+
+
   return (
     <div className="s-container">
       <Swiper
@@ -16,24 +34,28 @@ const Slider = () => {
         navigation={true}
         loopFillGroupWithBlank={true}
         slidesPerView={3}
-        spaceBetween={40}
+        spaceBetween={10}
         slidesPerGroup={1}
         loop={true}
       >
-        {SliderProducts.length > 0 &&
-          SliderProducts.map((slide, i) => (
-            <SwiperSlide className="" key={i}>
-              {slide && (
-                <div className="left-s">
-                  <div className="name">
-                    <span>{slide.name}</span>
-                    <span>{slide.detail}</span>
+        {faculty.length > 0 &&
+          faculty.map((product, index) => (
+            <SwiperSlide className="" key={index}>
+              {product && (
+                <div className="flex gap-4" key={index}>
+                  <img src={logo} alt=" " className="object-cover w-2/5 h-full" />
+                  <div className="flex flex-col flex-1 py-2 pe-3">
+                    <div className="w-full h-16 mb-2 text-xl font-normal leading-6 text-black transition-all duration-300 cursor-pointer line-clamp-2 hover:underline">
+                     {product.name}
+                    </div>
+                    <div className="h-[62px] w-full leading-5 my-1 line-clamp-3 font-normal text-base"><span className="font-bold">Thành lập:</span> {product.found}</div>
+                    <Link to={product.url} className="py-1 mt-2 text-center text-white border rounded-lg cursor-pointer flex-end bg-slate hover:bg-opacity-85">
+                      Chi tiết
+                    </Link>
                   </div>
-                  <span>{slide.price}</span>
-                  <div className="hover:bg-sky-200 cursor-pointer">Detail</div>
                 </div>
               )}
-              <img src={slide.img} alt="product" className="img-p" />
+              
             </SwiperSlide>
           ))}
       </Swiper>
