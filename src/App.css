@@ -5,10 +5,12 @@
   --shadow2: 0px 13px 46px rgba(0, 0, 0, 0.13);
   --pink: #fe956f;
 }
+
 .App {
   display: flex;
   flex-direction: column;
 }
+
 ::-webkit-scrollbar {
   height: 5px;
   width: 5px;

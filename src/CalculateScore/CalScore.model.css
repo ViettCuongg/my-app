@@ -1,23 +1,28 @@
 .category-calculate-score {
   margin-top: 30px;
 }
+
 .uk-container {
   max-width: 1100px;
   padding: 0 15px;
 }
+
 .uk-container-center {
   margin-left: auto;
   margin-right: auto;
 }
+
 .blogtitle span {
   font-size: 20px;
   font-weight: 700;
   line-height: 2;
 }
+
 .blog-img img {
   width: 100% !important;
   height: 500px;
 }
+
 .tcontent-container {
   margin-top: 20px;
   background: #f9f9f9;
@@ -28,16 +33,19 @@
   display: table;
   font-size: 95%;
 }
+
 .toc_title {
   text-align: center;
   font-weight: 700;
   margin: 0;
   padding: 0;
 }
+
 .toc_list {
   margin-top: 1em;
 }
-input[type="text"] {
+
+.score {
   width: 100px;
   padding: 12px 20px;
   margin: 8px;
@@ -46,12 +54,14 @@ input[type="text"] {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 .form-container {
   border: 1px solid rgb(173, 173, 173);
   border-radius: 5px;
   background-color: #f7f7f7;
   padding: 20px;
 }
+
 input[type="radio"] {
   height: 20px;
   width: 20px;
@@ -63,6 +73,7 @@ input[type="radio"] {
   padding: initial;
   border: initial;
 }
+
 input[type="button"] {
   width: 300px;
   background-color: #4caf50;
@@ -73,6 +84,7 @@ input[type="button"] {
   border-radius: 4px;
   cursor: pointer;
 }
+
 .step-use-calculate {
   font-weight: 700;
   line-height: 22px;
@@ -81,14 +93,17 @@ input[type="button"] {
   font-size: 20px;
   margin: 36px 0 16px 0;
 }
+
 .receipt-calScore {
   width: 700px;
   height: 200px;
   margin: 10px 20px 20px 0;
 }
+
 .title-detail {
   margin: 20px 0;
 }
+
 .step-calculate-thpt {
   margin: 8px 0;
 }
