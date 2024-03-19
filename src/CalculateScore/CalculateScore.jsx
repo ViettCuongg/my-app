@@ -49,7 +49,7 @@ const CalculateScore = () => {
                             href="https://thptquocgia.edu.vn/diemthi/#google_vignette"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-red font-bold"
+                            className="font-bold text-red"
                         >
                             tra cứu
                         </a>

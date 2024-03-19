@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import '../QuizzPersonality/QuizzPersonality.model.css';
 import { Cursor } from 'react-bootstrap-icons';
 import { useRef } from 'react';
+import Footer2 from '../Footer2/Footer2';
 const QuizzPersonality = () => {
     const ref = useRef(null);
     const handleClick = () => {
@@ -152,6 +153,7 @@ const QuizzPersonality = () => {
                     </a>
                 </div>
             </div>
+            <Footer2 />
         </div>
     );
 };

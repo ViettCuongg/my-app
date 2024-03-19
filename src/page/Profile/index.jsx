@@ -3,23 +3,29 @@ import Footer2 from '../../components/Footer2/Footer2';
 import { useEffect, useState } from 'react';
 
 import * as http from '../../api/axios';
+import { useNavigate } from 'react-router';
 
 export default function Profile() {
     const user = JSON.parse(localStorage.getItem('user'));
+    const navigation = useNavigate();
     const [inputValue, setInputValue] = useState(user);
     const [point, setPoint] = useState({});
     useEffect(() => {
-        const fetchApiGetPoint = async () => {
-            try {
-                const res = await http.get(`transcript/user/${user.id}`);
-                setPoint(res);
-                console.log(res);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        fetchApiGetPoint();
-    }, [user.id]);
+        if (user === null || user === undefined || user === '') {
+            navigation('/');
+        } else {
+            const fetchApiGetPoint = async () => {
+                try {
+                    const res = await http.get(`transcript/user/${user.id}`);
+                    setPoint(res);
+                    console.log(res);
+                } catch (error) {
+                    console.log(error);
+                }
+            };
+            fetchApiGetPoint();
+        }
+    }, [navigation, user, user.id]);
     const handleChange = (e) => {
         setPoint((pre) => ({ ...pre, [e.target.name]: e.target.value }));
     };
@@ -36,9 +42,9 @@ export default function Profile() {
     return (
         <>
             <Navbar />
-            <div className="container px-0 py-0 mx-auto mt-2 z-0">
+            <div className="container z-0 px-0 py-0 mx-auto mt-2">
                 <div className="grid grid-cols-3 gap-6">
-                    <div className="flex flex-col items-center col-span-1 bg-white rounded-lg p-4">
+                    <div className="flex flex-col items-center col-span-1 p-4 bg-white rounded-lg">
                         <h1 className="text-2xl font-semibold text-center">Thông tin cá nhân</h1>
                         {/* <div className="w-[150px] h-[150px] mt-2">
                             <img
@@ -273,7 +279,7 @@ export default function Profile() {
                                         onChange={handleChange}
                                     />
                                 </div>
-                                <button onClick={updatePoint} className="mt-3 border bg-bermuda rounded-lg">
+                                <button onClick={updatePoint} className="mt-3 border rounded-lg bg-bermuda">
                                     Cập nhật
                                 </button>
                             </div>

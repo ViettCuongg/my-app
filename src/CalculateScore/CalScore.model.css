@@ -45,7 +45,8 @@
   margin-top: 1em;
 }
 
-input[type="text"] {
+.score {
+  width: 100px;
   padding: 12px 20px;
   margin: 8px;
   display: inline;

@@ -1,6 +1,7 @@
 import Navbar from '../../components/HomePage/header/Navbar';
 import '../CarrerTrends/CarrerTrends.module.css';
 import carrerimg from '../../assets/carrer.png';
+import Footer2 from '../../components/Footer2/Footer2';
 const CarrerTrends = () => {
     return (
         <div>
@@ -238,6 +239,7 @@ const CarrerTrends = () => {
                     </p>
                 </div>
             </div>
+            <Footer2 />
         </div>
     );
 };
