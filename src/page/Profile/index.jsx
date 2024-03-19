@@ -82,7 +82,7 @@ export default function Profile() {
                                     <input
                                         className="w-full px-2 py-1 text-base font-normal border rounded-md "
                                         type="text"
-                                        // value={inputValue.phoneNumber}
+                                        value={inputValue.phoneNumber}
                                     />
                                 </div>
 
@@ -93,7 +93,7 @@ export default function Profile() {
                                     <input
                                         className="w-full px-2 py-1 text-base font-normal border rounded-md "
                                         type="text"
-                                        // value={inputValue.school}
+                                        value={inputValue.school}
                                     />
                                 </div>
                                 <div className="mb-2">
@@ -103,7 +103,7 @@ export default function Profile() {
                                     <input
                                         className="w-full px-2 py-1 text-base font-normal border rounded-md "
                                         type="date"
-                                        // value={inputValue.dob}
+                                    // value={inputValue.dob}
                                     />
                                 </div>
                                 {/* <div className="mb-2">
