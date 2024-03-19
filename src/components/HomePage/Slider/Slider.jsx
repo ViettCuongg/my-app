@@ -5,7 +5,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './../../../App.css';
 import '../../HomePage/Slider/Slider.css';
-import logo from '../../../assets/goalss.jpg';
 import { useEffect, useState } from 'react';
 import * as http from '../../../api/axios';
 import { Link } from 'react-router-dom';
@@ -42,7 +41,7 @@ const Slider = () => {
                         <SwiperSlide className="" key={index}>
                             {product && (
                                 <div className="flex gap-4" key={index}>
-                                    <img src={logo} alt=" " className="object-cover w-2/5 h-full" />
+                                    <img src={product.img} alt=" " className="object-cover w-2/5 h-full" />
                                     <div className="flex flex-col flex-1 py-2 pe-3">
                                         <div className="w-full h-16 mb-2 text-xl font-normal leading-6 text-black transition-all duration-300 cursor-pointer line-clamp-2 hover:underline">
                                             {product.name}

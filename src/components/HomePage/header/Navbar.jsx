@@ -77,7 +77,7 @@ const Navbar = () => {
                 <StyledRight className="right pr-4">
                     <StyledMenuComponent className="menu">
                         <StyledMenuUl className="menu">
-                            <StyledListMenu to="/Homepage">Trang chủ</StyledListMenu>
+                            <StyledListMenu to="/">Trang chủ</StyledListMenu>
                             <StyledListMenu to="/CalculateScore">Tính điểm </StyledListMenu>
                             <StyledListMenu to="/baseScore">Điểm chuẩn</StyledListMenu>
                             <StyledListMenu to="/QuizzPersonality">Công cụ</StyledListMenu>
