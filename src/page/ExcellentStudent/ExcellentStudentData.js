@@ -14,7 +14,7 @@ export const ExcellentStudentData = [
     {
         id: '2',
         img: sv7,
-        name: 'Đàm Việt Cường',
+        name: 'Nguyễn Hoàng Quân ',
         detail: 'Sinh viên có thành tích xuất sắc trong thời gian học tại trường đóng góp vào các hoạt động của khoa ',
     },
     {
@@ -26,13 +26,13 @@ export const ExcellentStudentData = [
     {
         id: '4',
         img: sv4,
-        name: 'Đàm Việt Cường',
+        name: 'Trần Trung Quân',
         detail: 'Sinh viên có thành tích xuất sắc trong thời gian học tại trường đóng góp vào các hoạt động của khoa ',
     },
     {
         id: '5',
         img: sv5,
-        name: 'Đàm Việt Cường',
+        name: 'Nguyễn Hoàng Nam',
         detail: 'Sinh viên có thành tích xuất sắc trong thời gian học tại trường đóng góp vào các hoạt động của khoa ',
     },
     {

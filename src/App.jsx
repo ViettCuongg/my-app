@@ -15,6 +15,7 @@ import ExcellentStudentDetail from './page/ExcellentStudent/ExcellentStudentDeta
 import CarrerTrends from './page/CarrerTrends/CarrerTrends';
 import AboutTDTU from './page/aboutTDTU/AboutTDTU';
 import NewsDetail1 from './News/NewsDetail/NewsDetail1';
+import ImageAboutTDTU from './page/ImageAboutTDTU/ImageAboutTDTU';
 
 // import Register from "../../SignUp/Register";
 
@@ -36,11 +37,13 @@ const App = () => {
                 <Route path="/sinh-vien-tieu-bieu" element={<ExcellentStudentDetail />} />
                 <Route path="/xu-huong-nganh-nghe-tuong-lai" element={<CarrerTrends />} />
                 <Route path="/tin-tuc-tuyen-sinh" element={<NewsDetail1 />} />
+                <Route path="/hinh-anh-ve-tdtu" element={<ImageAboutTDTU />} />
                 <Route path="/category/0" element={<MBTIIntro />} />
                 <Route path="/category/1" element={<Register />} />
                 <Route path="/category/2" element={<ExcellentStudent />} />
                 <Route path="/category/3" element={<CarrerTrends />} />
                 <Route path="/category/4" element={<AboutTDTU />} />
+                <Route path="/category/5" element={<ImageAboutTDTU />} />
             </Routes>
         </BrowserRouter>
     );
