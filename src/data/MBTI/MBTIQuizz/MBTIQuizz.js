@@ -20,7 +20,7 @@ export const MBTIQuestion = [
     answers: [
       {
         value: 's',
-        text: 'Thực tế hơn là suy đoánạ',
+        text: 'Thực tế hơn là suy đoán',
       },
       {
         value: 'n',

@@ -49,7 +49,7 @@ const Product = () => {
   return (
     <div className={css.container}>
       <img src={Plane} className={css.img} />
-      <h1 className="text-2xl font-medium text-black">Our Course</h1>
+      <h1 className="text-4xl font-bold text-black">NGÀNH ĐÀO TẠO</h1>
       <div className={css.products}>
         <ul className="bg-white rounded-lg shadow-lg  list-none flex flex-col font-medium text-[20px] h-[25rem] overflow-y-scroll w-1/5">
           <li
@@ -77,7 +77,7 @@ const Product = () => {
         <div className={`grid grid-cols-3 h-[25rem] overflow-y-scroll w-full gap-5 bg-white p-2`}>
           {majors.map((item, index) => (
             <div className="flex shadow-xl bg-white h-[200px] gap-4" key={index}>
-              <img src={item.logo} alt=" " className="object-cover w-2/5 h-full" />
+              <img src={item.img} alt=" " className="object-cover w-2/5 h-full" />
               <div className="flex flex-col flex-1 py-2 pe-3">
                 <div className="w-full h-20 mb-2 text-xl font-normal leading-7 text-black transition-all duration-300 cursor-pointer line-clamp-2">
                   {item.name}

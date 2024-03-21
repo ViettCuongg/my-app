@@ -44,18 +44,19 @@ const Slider = () => {
                                     <img src={product.img} alt=" " className="object-cover w-2/5 h-full" />
                                     <div className="flex flex-col flex-1 py-2 pe-3">
                                         <div className="w-full h-16 mb-2 text-xl font-normal leading-6 text-black transition-all duration-300 cursor-pointer line-clamp-2 hover:underline">
-                                            {product.name}
+                                            <Link
+                                                target="_blank"
+                                                to={product.url}
+
+                                            >
+                                                {product.name}
+                                            </Link>
+
                                         </div>
                                         <div className="h-[62px] w-full leading-5 my-1 line-clamp-3 font-normal text-base">
                                             <span className="font-bold">Thành lập:</span> {product.found}
                                         </div>
-                                        <Link
-                                            target="_blank"
-                                            to={product.url}
-                                            className="py-1 mt-2 text-center text-white border rounded-lg cursor-pointer flex-end bg-slate hover:bg-opacity-85"
-                                        >
-                                            Chi tiết
-                                        </Link>
+
                                     </div>
                                 </div>
                             )}

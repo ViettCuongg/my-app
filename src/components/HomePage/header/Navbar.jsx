@@ -80,7 +80,7 @@ const Navbar = () => {
                             <StyledListMenu to="/">Trang chủ</StyledListMenu>
                             <StyledListMenu to="/CalculateScore">Tính điểm </StyledListMenu>
                             <StyledListMenu to="/baseScore">Điểm chuẩn</StyledListMenu>
-                            <StyledListMenu to="/QuizzPersonality">Công cụ</StyledListMenu>
+                            <StyledListMenu to="/QuizzPersonality">MBTI</StyledListMenu>
                         </StyledMenuUl>
                     </StyledMenuComponent>
                 </StyledRight>
@@ -93,7 +93,7 @@ const Navbar = () => {
                             alt=""
                             className="w-[40px] h-[40px] object-cover rounded-full cursor-pointer"
                         />
-                        {/* <span>Phạm Văn Vĩ</span> */}
+                        { }
                         {toggle && (
                             <div className="z-1000000 absolute -right-full mt-2 h-[90px] top-full w-48 bg-white rounded-md shadow-lg">
                                 <Link
@@ -114,7 +114,7 @@ const Navbar = () => {
                 ) : (
                     <StyledMenuComponent className="">
                         <Link to="/register">
-                            <button className="px-8 py-3 rounded-md bg-[#20B486]">Signup for free</button>
+                            <button className="px-8 py-3 rounded-md bg-[#20B486]">Sign Up</button>
                         </Link>
                     </StyledMenuComponent>
                 )}

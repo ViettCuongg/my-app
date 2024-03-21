@@ -186,7 +186,7 @@ const CalculateForm = () => {
                             <input type="button" value="Tính điểm xét tốt nghiệp" onClick={calculateScore}></input>
                             <br />
                             Điểm xét tốt nghiệp:
-                            <label type="text" id="diemxetTN" name="diemTN">
+                            <label type="text" id="diemxetTN" name="diemTN" className='font-bold text-xl pl-2'>
                                 {diemXetTN}
                             </label>
                         </div>
