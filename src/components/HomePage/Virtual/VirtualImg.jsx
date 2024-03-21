@@ -8,9 +8,11 @@ const VirtualImg = () => {
         <div>
             <div className={css.Virtual}>
                 <div className={css.left}>
-                    <span className="text-red">The more you do</span>
-                    <span className="text-purple">The more you get</span>
-                    <span>Try-Now!!!</span>
+                    <span className=" ">Light from here shall illuminate the entire universe</span>
+                    <p className="">- Slogan Đại học Tôn Đức Thắng -</p>
+                    <a className=" " href="https://tdtu.edu.vn/">
+                        TDTU - Homepage
+                    </a>
                     <img src={Shade} alt="" />
                 </div>
                 <div className={css.right}>
