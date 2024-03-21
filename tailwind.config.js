@@ -6,6 +6,7 @@ export default {
             spacing: {
                 '100px': '100px',
             },
+
             colors: {
                 transparent: 'transparent',
                 current: 'currentColor',
@@ -26,6 +27,9 @@ export default {
                 green: '#006A4E',
                 blue_gray: { 600: '#5f6c86', 900: '#262b35' },
                 blue: { A700: '#0061ff', A700_19: '#0061ff19', A200: '#f44336' },
+            },
+            boxShadow: {
+                card: '0 10px 40px 0 rgb(39 37 63 / 15%),0 2px 9px 0 rgb(39 37 63 / 15%)',
             },
         },
 
