@@ -81,8 +81,7 @@ const Hero = () => {
       {/* /* right*/}
       <div className={css.h_sides}>
         <div className={css.traffic}>
-          <span className="text-lg leading-10">100.000/ month</span>
-          <span>Monba</span>
+          <span className="text-lg leading-10"></span>
         </div>
         <div className={css.customers}>
           <span>1240k</span>
