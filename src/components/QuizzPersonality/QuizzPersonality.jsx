@@ -17,6 +17,9 @@ const QuizzPersonality = () => {
     const handleClickMBTI = () => {
         navigate('/mbti-intro');
     };
+    const handleClickHolland = () => {
+        navigate('/Holland');
+    };
     return (
         <div>
             <Navbar />
@@ -143,9 +146,13 @@ const QuizzPersonality = () => {
                                         với tính cách đó.
                                     </p>
                                 </div>
-                                <div className="styles_buttonBg__1QNBg">
-                                    <button className="styles_btn__2iAnc undefined styles_lg__3X7rs rounded-md w-full">
-                                        <p>Khám Phá Ngay</p>
+                                <div className="flex justify-center items-center pt-16">
+                                    <button
+                                        className="flex justify-center items-center w-64 h-12 border border-blue hover:bg-bluedark hover:text-white text-blue font-bold py-2 px-4 rounded-lg transition-all duration-300 cursor-pointer"
+                                        onClick={handleClickHolland}
+                                    >
+                                        <Cursor className="block align-middle mr-2" size={18} color="blue" />
+                                        <span className="leading-5"> KHÁM PHÁ NGAY</span>
                                     </button>
                                 </div>
                             </div>

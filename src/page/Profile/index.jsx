@@ -8,8 +8,9 @@ import { useNavigate } from 'react-router';
 export default function Profile() {
     const user = JSON.parse(localStorage.getItem('user'));
     const navigation = useNavigate();
-    const [inputValue, setInputValue] = useState(user);
+
     const [point, setPoint] = useState({});
+    const [dataUser, setDataUser] = useState({});
     useEffect(() => {
         if (user === null || user === undefined || user === '') {
             navigation('/');
@@ -24,13 +25,24 @@ export default function Profile() {
                 }
             };
             fetchApiGetPoint();
+            const fetchApiGetUser = async () => {
+                try {
+                    const res = await http.get(`user/${user.id}`);
+                    setDataUser(res);
+                    console.log(res);
+                } catch (error) {
+                    console.log(error);
+                }
+            };
+            fetchApiGetPoint();
+            fetchApiGetUser();
         }
-    }, [navigation, user, user.id]);
+    }, [user.id]);
     const handleChange = (e) => {
         setPoint((pre) => ({ ...pre, [e.target.name]: e.target.value }));
     };
     const updatePoint = async () => {
-        const { id } = inputValue;
+        const { id } = user;
         try {
             const res = await http.post(`transcript/update/${id}`, point);
             console.log(res);
@@ -46,13 +58,7 @@ export default function Profile() {
                 <div className="grid grid-cols-3 gap-6">
                     <div className="flex flex-col items-center col-span-1 p-4 bg-white rounded-lg">
                         <h1 className="text-2xl font-semibold text-center">Thông tin cá nhân</h1>
-                        {/* <div className="w-[150px] h-[150px] mt-2">
-                            <img
-                                src="https://i.pinimg.com/236x/a2/9b/d0/a29bd0059d58604110bb2f996c8ece65.jpg"
-                                alt="avatar"
-                                className="object-cover w-full h-full rounded-full cursor-pointer"
-                            />
-                        </div> */}
+
                         <form>
                             <div className="grid grid-cols-1 gap-2">
                                 <div className="mb-2">
@@ -65,22 +71,22 @@ export default function Profile() {
                                         // onChange={handleChange}
                                         className="w-full px-2 py-1 text-base font-normal border rounded-md "
                                         type="text"
-                                        value={inputValue.fullname}
+                                        value={dataUser.fullname}
                                     />
                                 </div>
-                                <div className="mb-2">
+                                {/* <div className="mb-2">
                                     <label htmlFor="" className="inline-block mr-3 text-base font-semibold ">
                                         Email:
                                     </label>
                                     <input
                                         className="w-full px-2 py-1 text-base font-normal border rounded-md "
                                         type="text"
-                                        value={inputValue.email}
+                                        value={dataUser.email}
                                         // onChange={handleChange}
                                         name="email"
                                         disabled
                                     />
-                                </div>
+                                </div> */}
                                 <div className="mb-2">
                                     <label htmlFor="" className="inline-block mr-3 text-base font-semibold ">
                                         Số điện thoại:
@@ -88,7 +94,7 @@ export default function Profile() {
                                     <input
                                         className="w-full px-2 py-1 text-base font-normal border rounded-md "
                                         type="text"
-                                        value={inputValue.phoneNumber}
+                                        value={dataUser.phoneNumber}
                                     />
                                 </div>
 
@@ -99,7 +105,7 @@ export default function Profile() {
                                     <input
                                         className="w-full px-2 py-1 text-base font-normal border rounded-md "
                                         type="text"
-                                        value={inputValue.school}
+                                        value={dataUser.school}
                                     />
                                 </div>
                                 <div className="mb-2">
@@ -108,24 +114,10 @@ export default function Profile() {
                                     </label>
                                     <input
                                         className="w-full px-2 py-1 text-base font-normal border rounded-md "
-                                        type="date"
-                                    // value={inputValue.dob}
+                                        type="text"
+                                        value={dataUser.dob}
                                     />
                                 </div>
-                                {/* <div className="mb-2">
-                                    <label htmlFor="" className="inline-block mr-3 text-base font-semibold">
-                                        Giới tính:
-                                    </label>
-                                    <select
-                                        className="w-full px-2 py-1 text-base font-normal border rounded-md "
-                                        name=""
-                                        id=""
-                                    >
-                                        <option>Nam/Nữ</option>
-                                        <option value="nam">Nam</option>
-                                        <option value="nu">Nữ</option>
-                                    </select>
-                                </div> */}
                             </div>
                         </form>
                     </div>
@@ -279,10 +271,13 @@ export default function Profile() {
                                         onChange={handleChange}
                                     />
                                 </div>
-                                <button onClick={updatePoint} className="mt-3 border rounded-lg bg-bermuda">
-                                    Cập nhật
-                                </button>
                             </div>
+                            <button
+                                onClick={updatePoint}
+                                className="mt-3 py-1 px-2 rounded-lg bg-[#28a745] text-white cursor-pointer hover:opacity-90 float-right"
+                            >
+                                Cập nhật bảng điểm
+                            </button>
                         </div>
                     </div>
                 </div>

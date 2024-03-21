@@ -22,11 +22,11 @@
 }
 
 .left> :nth-child(2) {
-  color: black;
+  color: blue;
   width: max-content;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  font-style: italic;
+  text-transform: uppercase;
   display: block;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .left> :nth-child(3):hover {
-  color: blue;
+  color: red;
   text-decoration: underline;
 }
 

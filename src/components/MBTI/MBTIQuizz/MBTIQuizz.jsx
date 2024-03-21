@@ -7,11 +7,16 @@ import Navbar from '../../HomePage/header/Navbar';
 import Footer2 from '../../Footer2/Footer2';
 import { IconButton, Tooltip } from '@mui/material';
 import ErrorIcon from '@mui/icons-material/Error';
+import { ToastContainer, toast } from 'react-toastify';
+import { FaCheck } from 'react-icons/fa6';
+import * as http from '../../../api/axios';
 function MBTIQuizApp() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [selectedOption, setSelectedOption] = useState('');
     const [answers, setAnswers] = useState([]);
     const [showResult, setShowResult] = useState(false);
+
+    const [resultTest, setResultTest] = useState({});
 
     const handleOptionSelect = (value) => {
         setSelectedOption(value);
@@ -77,119 +82,184 @@ function MBTIQuizApp() {
     const handleFinishTest = () => {
         const result = calculateResult();
         setShowResult(true);
-
+        const fetchApi = async () => {
+            try {
+                const res = await http.post('hobby/test_result', { email: dataEmail, result: result });
+                setResultTest(res);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchApi();
         console.log('Kết quả của bài test:', result);
     };
+    const [isLogEmail, setIsLogEmail] = useState(false);
+    const [dataEmail, setDataEmail] = useState();
+    const [isValid, setIsValid] = useState(false);
+
+    const handlechangeEmail = (e) => {
+        const { value } = e.target;
+        setDataEmail(value);
+        // Regular expression for email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // // Test if the entered email matches the regex
+        setIsValid(emailRegex.test(value));
+    };
+    const handleCheckEmailLog = () => {
+        if (dataEmail === '' || dataEmail === null || dataEmail === undefined) {
+            toast.error('Vui lòng nhập email');
+        } else if (isValid === true) {
+            setIsLogEmail(true);
+        } else {
+            toast.error('Email không đúng định dạng');
+        }
+    };
+
     return (
         <>
+            <ToastContainer position="top-right" />
             <Navbar />
-            <div className="quiz-container mx-auto mt-32 drop-shadow-2xl  bg-white text-red-500 flex flex-col gap-20 rounded-lg p-10 md:w-3/4 lg:w-2/4">
-                {showResult ? (
-                    <div className="result-container">
-                        <div className="flex justify-between">
-                            <h2 className="pb-4 font-bold text-2xl">Kết quả</h2>
-                            {answers.length < 70 ? (
-                                <Tooltip
-                                    title="Vui lòng hoàn thành 70 câu hỏi để nhận kết quả chính xác nhất "
-                                    placement="top"
-                                    arrow
-                                    PopperProps={{
-                                        disablePortal: true,
-                                        modifiers: [
-                                            {
-                                                name: 'offset',
-                                                options: {
-                                                    offset: [0, 2],
+            {isLogEmail ? (
+                <div className="flex flex-col gap-20 p-10 mx-auto mt-32 text-red-500 bg-white rounded-lg quiz-container drop-shadow-2xl md:w-3/4 lg:w-2/4">
+                    {showResult ? (
+                        <div className="result-container">
+                            <div className="flex justify-between">
+                                <h2 className="pb-4 text-2xl font-bold">Kết quả</h2>
+                                {answers.length < 70 ? (
+                                    <Tooltip
+                                        title="Vui lòng hoàn thành 70 câu hỏi để nhận kết quả chính xác nhất "
+                                        placement="top"
+                                        arrow
+                                        PopperProps={{
+                                            disablePortal: true,
+                                            modifiers: [
+                                                {
+                                                    name: 'offset',
+                                                    options: {
+                                                        offset: [0, 2],
+                                                    },
                                                 },
-                                            },
-                                        ],
-                                    }}
-                                    sx={{ color: 'red' }}
-                                >
-                                    <IconButton color="error">
-                                        <ErrorIcon />
-                                    </IconButton>
-                                </Tooltip>
-                            ) : null}
-                        </div>
-                        <hr className="pb-4" />
+                                            ],
+                                        }}
+                                        sx={{ color: 'red' }}
+                                    >
+                                        <IconButton color="error">
+                                            <ErrorIcon />
+                                        </IconButton>
+                                    </Tooltip>
+                                ) : null}
+                            </div>
+                            <hr className="pb-4" />
 
-                        <p>
-                            <span className="text-purple text-lg">Kết quả của bạn là: </span>
-                            <span className="text-red font-bold text-xl">{calculateResult()}</span>
-                        </p>
-                        <div className="">
-                            <h1>
-                                <span className="font-bold text-xl text-p">Người giám hộ</span> - Theo đuổi chủ nghĩa
-                                làm việc siêng năng, tận tâm và nỗ lực hết mình để đạt được thành quả trong công việc .{' '}
-                            </h1>
                             <p>
-                                {' '}
-                                <span className="font-bold">Ngành học phù hợp:</span> Luật, Luật (Chất lượng cao),QTKD
-                                (Chuyên ngành Quản trị Nhà hàng - Khách sạn), QTKD (Chuyên ngành Quản trị nguồn nhân
-                                lực), Kinh doanh quốc tế (Chất lượng cao), Marketing (Chất lượng cao), QTKD (Chuyên
-                                ngành Quản trị Nhà hàng - Khách sạn) (Chất lượng cao), QTKD (Chuyên ngành Quản trị nguồn
-                                nhân lực) (Chất lượng cao), Kinh doanh quốc tế (Chương trình đại học bằng tiếng Anh),
-                                Marketing (Chương trình đại học bằng tiếng Anh), QTKD (Chuyên ngành Quản trị Nhà hàng -
-                                Khách sạn) (Chương trình đại học bằng tiếng Anh).
+                                <span className="text-lg text-purple">Kết quả của bạn là: </span>
+                                <span className="text-xl font-bold text-red">{calculateResult()}</span>
+                                <br />
+                                <span className="text-lg text-purple">Email của bạn là: </span>
+                                <span className="text-xl font-bold text-red">{dataEmail}</span>
                             </p>
-                        </div>
+                            <div className="">
+                                <h1>
+                                    <span className="text-xl font-bold text-p">{resultTest.name}</span> -{' '}
+                                    {resultTest.description}{' '}
+                                </h1>
+                                <p>
+                                    {' '}
+                                    <span className="font-bold">Ngành học phù hợp:</span>{' '}
+                                    {resultTest?.majors?.map((item, index) => (
+                                        <ul key={index}>
+                                            <li className="flex items-center gap-3">
+                                                <FaCheck className="text-xl text-[#22c55e]" /> {item}
+                                            </li>
+                                        </ul>
+                                    ))}
+                                </p>
+                            </div>
 
-                        <div className="flex justify-center items-center pt-8">
-                            <button
-                                className="inline-block rounded bg-red px-6 pb-2 pt-2.5 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-lightblue"
-                                onClick={restartQuiz}
-                            >
-                                Làm lại bài test
-                            </button>{' '}
-                        </div>
-                    </div>
-                ) : (
-                    <div className="question-container">
-                        {answers.length > 0 && (
-                            <div className="flex justify-end">
+                            <div className="flex items-center justify-center pt-8">
                                 <button
                                     className="inline-block rounded bg-red px-6 pb-2 pt-2.5 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-lightblue"
-                                    onClick={handleFinishTest}
+                                    onClick={restartQuiz}
                                 >
-                                    Kết thúc
+                                    Làm lại bài test
                                 </button>{' '}
                             </div>
-                        )}
-
-                        <h1 className="pb-2 font-bold text-red text-4xl">Bộ câu hỏi MBTI</h1>
-                        <hr className="pb-4" />
-                        <h2 className="py-2 font-bold text-xl text-purple">Câu hỏi {currentQuestion + 1}</h2>
-                        <div className="item-center">
-                            <p className="font-bold text-medium ">{MBTIQuestion[currentQuestion].question}</p>
-                            <ul>
-                                {MBTIQuestion[currentQuestion].answers.map((answer, index) => (
-                                    <li key={index}>
-                                        <label>
-                                            <input
-                                                type="radio"
-                                                name={MBTIQuestion[currentQuestion].id}
-                                                value={answer.value}
-                                                checked={selectedOption === answer.value}
-                                                onChange={() => handleOptionSelect(answer.value)}
-                                            />
-                                            {answer.text}
-                                        </label>
-                                    </li>
-                                ))}
-                            </ul>
                         </div>
-                        <div className="flex justify-center items-center pt-12">
+                    ) : (
+                        <div className="question-container">
+                            {answers.length > 0 && (
+                                <div className="flex justify-end">
+                                    <button
+                                        className="inline-block rounded bg-red px-6 pb-2 pt-2.5 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-lightblue"
+                                        onClick={handleFinishTest}
+                                    >
+                                        Kết thúc
+                                    </button>{' '}
+                                </div>
+                            )}
+
+                            <h1 className="pb-2 text-4xl font-bold text-red">Bộ câu hỏi MBTI</h1>
+                            <hr className="pb-4" />
+                            <h2 className="py-2 text-xl font-bold text-purple">Câu hỏi {currentQuestion + 1}</h2>
+                            <div className="item-center">
+                                <p className="font-bold text-medium ">{MBTIQuestion[currentQuestion].question}</p>
+                                <ul>
+                                    {MBTIQuestion[currentQuestion].answers.map((answer, index) => (
+                                        <li key={index}>
+                                            <label>
+                                                <input
+                                                    type="radio"
+                                                    name={MBTIQuestion[currentQuestion].id}
+                                                    value={answer.value}
+                                                    checked={selectedOption === answer.value}
+                                                    onChange={() => handleOptionSelect(answer.value)}
+                                                />
+                                                {answer.text}
+                                            </label>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="flex items-center justify-center gap-4 pt-12">
+                                <button
+                                    disabled
+                                    className={`inline-block rounded bg-green cursor-pointer px-6 pb-2 pt-2.5 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-lightblue `}
+                                >
+                                    Quay lại
+                                </button>
+                                <button
+                                    className="inline-block rounded bg-green px-6 pb-2 pt-2.5 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-lightblue"
+                                    onClick={handleNextQuestion}
+                                >
+                                    Tiếp theo
+                                </button>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            ) : (
+                <div className="container mx-auto my-2 w-[300px] h-[200px] flex flex-col bg-white p-0 shadow-xl rounded-lg">
+                    <div className="flex justify-center w-full bg-white rounded-lg item-center">
+                        <div className="flex flex-col w-full gap-4 px-4 py-2">
+                            <label htmlFor="">Vui lòng nhập email:</label>
+                            <input
+                                value={dataEmail}
+                                onChange={handlechangeEmail}
+                                type="text"
+                                placeholder="email"
+                                className="px-2 py-1 border rounded-lg"
+                            />
                             <button
-                                className="inline-block rounded bg-green px-6 pb-2 pt-2.5 font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-lightblue"
-                                onClick={handleNextQuestion}
+                                onClick={handleCheckEmailLog}
+                                className="w-full py-2 text-white border bg-green rounded-3xl hover:opacity-95"
                             >
-                                Tiếp theo
+                                Tiếp tục
                             </button>
                         </div>
                     </div>
-                )}
-            </div>
+                </div>
+            )}
             <Footer2 />
         </>
     );
