@@ -7,6 +7,7 @@ export default {
                 '100px': '100px',
             },
         },
+
         colors: {
             transparent: 'transparent',
             current: 'currentColor',
@@ -20,6 +21,7 @@ export default {
             bermuda: '#059669',
             red: '#f43f5e',
             orange: '#f37435',
+            yellow: '#FFC72C',
             // blue: "#1e40af",
             bluedark: '#1e40af',
             customPurple: '#8a2be2',
