@@ -1,8 +1,7 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Footer2 from '../../components/Footer2/Footer2';
 import Navbar from '../../components/HomePage/header/Navbar';
 
-import css from '../DetailMajors/DetailMajors.module.scss';
 import { useEffect, useState } from 'react';
 import * as http from '../../api/axios';
 
